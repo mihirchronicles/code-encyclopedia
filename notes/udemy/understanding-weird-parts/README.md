@@ -230,33 +230,4 @@
 
             // Naming library names to stop colliding names
             window.libraryName = window.libraryName || "Lib 2";
-
-- [**Glossary of Modern JS Concepts**](https://auth0.com/blog/glossary-of-modern-javascript-concepts/)
-- [**Javascript Event Loop**](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
-    - http://latentflip.com/loupe/
-    - Transcript: https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html
-    - JS is a single threaded programing language runtime. One code piece at a time. It has a single call stack.
-    - I'm a single threaded on blocking asynchronous concurrently glitch
-    - V8 is a heap and stack
-    - JavaScript programmers like to use words like, “event-loop”, “non-blocking”, “callback”, “asynchronous”, “single-threaded” and “concurrency”.
-    - We can do things concurrently in browser because a browser is more than a run-time. It has APIs. You call Web APIs. In node, you have C++ multi-thread.
-    - API does not live in V8 engine. It is part of XHR().
-    - 
-
-        ![](https://lh4.googleusercontent.com/ri1OXS5AaDgpjbAN7w8joXc_DTV6PcGWKpHcN5K29MQhypXhw-NC4MxCKyYhPijRoqWPClv5hSAkTJI8ARVhh1Pc6TZ2Dgb0S5pBRgIdyPe1fj2c48DnGICu297Iev3yqenNv2Y7)
-
-- [**JS Optimization & Performance**](why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress)
-
-    [The Cost Of JavaScript - Dev Channel - Medium](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
-
-    why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
-
-- [**A better way to code](https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0) by Mike Bostock**
-
-    A danger of spending so long designing a tool is that you may forget what the tool is for: the tool itself becomes the goal, rather than the value derived from its application.
-
-    The purpose of a visualization tool is to construct visualizations. But what is the purpose of visualization? Per Ben Shneiderman: The purpose of visualization is insight, not pictures.
-
-    Visualization is a means to an end. A means to insight. A way to think, to understand, to discover, and to communicate something about the world. If we consider only the task of assigning visual encodings, of constructing visualizations, we ignore myriad other challenges: finding relevant data, cleaning it, transforming it into efficient structures, analyzing it with statistics, modeling, explaining our discoveries.
-
-    Programming is blindly manipulating symbols. By “blindly”, it means we can’t see the results of our manipulation.
+            
