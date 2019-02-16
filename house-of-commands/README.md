@@ -2,6 +2,22 @@
 
 Useful development shortcuts and commands I use on daily basis.
 
+## Keyboard Shortcuts
+
+1. Window Management 
+ - **close one window, or tab.**: `command + w`
+ - **close all windows**: `command + q`
+ - **close all tabs**: `command + shift + w`
+ - **new tab**: `command + t`
+ - **switch between tabs. Not every app supports this.**: `command + Shift + [ & ] `
+2. Text Management 
+ - **jump between words.**: `alt + Left / right`
+ - **jump to the ends of the line.**: `command + left / right` 
+ - **delete all the words till it hits the left edge.**: `command + delete`
+3. Operating System
+ - **spotlight search, then up / down and enter to select.**: `command + space`
+ - **application selector**: `command + tab`
+
 ## Shell Command Line
 
 - **find path and package**: `which [package name] git`
