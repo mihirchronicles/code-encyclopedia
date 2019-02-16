@@ -5,36 +5,36 @@ Useful development shortcuts and commands I use on daily basis.
 ## Keyboard Shortcuts
 
 1. Window Management 
- - **close one window, or tab.**: `command + w`
- - **close all windows**: `command + q`
- - **close all tabs**: `command + shift + w`
- - **new tab**: `command + t`
- - **switch between tabs. Not every app supports this.**: `command + Shift + [ & ] `
+    - **close one window, or tab.**: `command + w`
+    - **close all windows**: `command + q`
+    - **close all tabs**: `command + shift + w`
+    - **new tab**: `command + t`
+    - **switch between tabs. Not every app supports this.**: `command + Shift + [ & ] `
 2. Text Management 
- - **jump between words.**: `alt + Left / right`
- - **jump to the ends of the line.**: `command + left / right` 
- - **delete all the words till it hits the left edge.**: `command + delete`
+    - **jump between words.**: `alt + Left / right`
+    - **jump to the ends of the line.**: `command + left / right` 
+    - **delete all the words till it hits the left edge.**: `command + delete`
 3. Operating System
- - **spotlight search, then up / down and enter to select.**: `command + space`
- - **application selector**: `command + tab`
+    - **spotlight search, then up / down and enter to select.**: `command + space`
+    - **application selector**: `command + tab`
 4. Cursor Movement
- - **move cursor to end of the line**: `ctrl + E`
- - **move cursor to start of the line**: `ctrl + A`
- - **move cursor one character forward**: `ctrl + F`
- - **move cursor one character backward**: `ctrl + B`
- - **move cursor one word forward**: `alt + F / alt + right`
- - **move cursor one word backward**: `alt + B / alt + left`
- - **,mve cursor to clicked character**: `Alt + click`
- - **toggle between the start of line and cursor position**: `ctrl + XX	`
+    - **move cursor to end of the line**: `ctrl + E`
+    - **move cursor to start of the line**: `ctrl + A`
+    - **move cursor one character forward**: `ctrl + F`
+    - **move cursor one character backward**: `ctrl + B`
+    - **move cursor one word forward**: `alt + F / alt + right`
+    - **move cursor one word backward**: `alt + B / alt + left`
+    - **,mve cursor to clicked character**: `Alt + click`
+    - **toggle between the start of line and cursor position**: `ctrl + XX	`
 5. Process
- - **kills current task (SIGINT)**: `ctrl + C`
- - **inserts an EOF**: `ctrl + D`
- - **pauses current task**: `ctrl + Z`
- - **stop output to the screen (for long running verbose commands))**: `ctrl + S`
- - **allow output to the screen (if previously stopped using stop output command)**: `ctrl + Q`
+    - **kills current task (SIGINT)**: `ctrl + C`
+    - **inserts an EOF**: `ctrl + D`
+    - **pauses current task**: `ctrl + Z`
+    - **stop output to the screen (for long running verbose commands))**: `ctrl + S`
+    - **allow output to the screen (if previously stopped using stop output command)**: `ctrl + Q`
 6. History
- - **previous command**: `ctrl + P`
- - **next command**: `ctrl + R`
+    - **previous command**: `ctrl + P`
+    - **next command**: `ctrl + R`
 
 ## Shell Command Line
 
