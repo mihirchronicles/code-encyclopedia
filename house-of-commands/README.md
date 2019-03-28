@@ -9,7 +9,7 @@ Useful development shortcuts and commands I use on daily basis.
     - **close all windows**: `command + q`
     - **close all tabs**: `command + shift + w`
     - **new tab**: `command + t`
-    - **switch between tabs. Not every app supports this.**: `command + Shift + [ & ] `
+    - **switch between tabs. Not every app supports this.**: `command + Shift + [ left/right ]`
 2. Text Management 
     - **jump between words.**: `alt + Left / right`
     - **jump to the ends of the line.**: `command + left / right` 
