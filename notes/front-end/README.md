@@ -308,7 +308,7 @@
 - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 
 # CSS
-- https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525
+- [Modern CSS](https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525)
 - **Float**: the three columns are not equal in height, and the page doesn’t fill the height of the screen. These issues are inherent with a float-based approach. All a float can do is place content to the left or right of a section — the CSS has no way to infer the heights of the content in the other sections. This problem had no straightforward solution until many years later, with a flexbox-based layout.
 - **Flex**: [Solved By Flexbox](https://github.com/philipwalton/solved-by-flexbox). Flexbox eliminates a lot of the float hacks, but the code isn’t as expressive as it could be for defining layout. It’s hard to read the flexbox CSS and get a visual understanding how all of the elements will be laid out on the page. This leads to a lot of guessing and checking when writing flexbox-based layouts.
 - **Css Grid**: [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
