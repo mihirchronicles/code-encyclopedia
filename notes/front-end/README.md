@@ -1,6 +1,7 @@
 # JS Notes
 
-- **Event Loop**: (https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+- **Event Loop**: 
+    - https://www.youtube.com/watch?v=8aGhZQkoFbQ
     - http://latentflip.com/loupe/
     - Transcript: https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html
     - JS is a single threaded programing language runtime. One code piece at a time. It has a single call stack.
