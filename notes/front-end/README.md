@@ -299,9 +299,8 @@
 
     This is only scratching the surface, there are plenty more options with both webpack and webpack-dev-server (which you can read about here). You can of course make npm scripts for running other tasks as well, such as converting Sass to CSS, compressing images, running tests — anything that has a command line tool is fair game. There are also some great advanced options and tricks with npm scripts themselves — this talk by Kate Hudson is a great place to start: 
 
-    [Kate Hudson talk on Webpack](https://www.youtube.com/watch?v=0RYETb9YVrk)
-
-    [Webpack](https://webpack.js.org/guides/development/)
+    - [Kate Hudson talk on Webpack](https://www.youtube.com/watch?v=0RYETb9YVrk)
+    - [Webpack](https://webpack.js.org/guides/development/)
 
 - **Other**
     - [Traceur Compiler](https://github.com/google/traceur-compiler)
