@@ -9,13 +9,13 @@
     - JavaScript programmers like to use words like, “event-loop”, “non-blocking”, “callback”, “asynchronous”, “single-threaded” and “concurrency”.
     - We can do things concurrently in browser because a browser is more than a run-time. It has APIs. You call Web APIs. In node, you have C++ multi-thread.
     - API does not live in V8 engine. It is part of XHR().
-    - [https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
+    - [How Does Javascript actually work?](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
     - The Engine consists of two main components:* Memory Heap — this is where the memory allocation happens* Call Stack — this is where your stack frames are as your code executes
     - JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.
     - The Call Stack is a data structure which records basically where in the program we are. If we step into a function, we put it on the top of the stack. If we return from a function, we pop off the top of the stack. That’s all the stack can do.
 
 - **JS Optimization & Performance**: (why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress)
-    - [The Cost Of JavaScript - Dev Channel - Medium](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
+    - [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
     - why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
 
 - **Syntax Parsers**: a program that reads your code and determines what it does and if its grammar is valid. Compiler or interpreter needs to transfer the code to the computer.
@@ -170,7 +170,7 @@
         var b = "hello" + " world!"; // hello world
         var c = 1 + "2"; // 12 coerced
 
-- **Comparison Operators:** are functions. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- **Comparison Operators:** are functions. [MDN Doc Comparison](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
     - Gochyas Examples
 
             console.log(1 < 2 < 3); // true
@@ -267,11 +267,10 @@
 
 # Tooling
 
+- [Modern Javascript](https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70)
+
 - **Package manager**:
-    [https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70](https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-
     This is useful later when sharing a project with others — instead of sharing the node_modules folder (which can get very large), you only need to share the package.json file and other developers can install the required packages automatically with the command npm install. So now we no longer have to manually download moment.js from the website, we can automatically download and update it using npm.
-
 - **Module** **Bundling**:
     Most programming languages provide a way to import code from one file into another. JavaScript wasn’t originally designed with this feature, because JavaScript was designed to only run in the browser, with no access to the file system of the client’s computer (for security reasons). So for the longest time, organizing JavaScript code in multiple files required you to load each file with variables shared globally. This is actually what we’re doing with the above moment.js example — the entire **`moment.min.js`** file is loaded in the HTML, which defines a global variable `moment`, which is then available to any file loaded after **`moment.min.js`** (regardless of whether or not it needs access to it). node.js solved this problem. It is a JavaScript runtime designed to run on the server. Here’s what the earlier example would look like using node.js modules. Instead of loading all of moment.min.js with an HTML script tag, you can load it directly in the JavaScript file as follows:
 
@@ -282,14 +281,12 @@
     Again, this is how module loading works in node.js, which works great since node.js is a server side language with access to the computer’s file system. Node.js also knows the location of each npm module path, so instead of having to write require('./node_modules/moment/min/moment.min.js), you can simply write require('moment') — pretty sweet. This is all great for node.js, but if you tried to use the above code in the browser, you’d get an error saying require is not defined. The browser doesn’t have access to the file system, which means loading modules in this way is very tricky — loading files has to be done dynamically, either synchronously (which slows down execution) or asynchronously (which can have timing issues). 
 
     This is where a module bundler comes in. A JavaScript module bundler is a tool that gets around the problem with a build step (which has access to the file system) to create a final output that is browser compatible (which doesn’t need access to the file system). In this case, we need a module bundler to find all require statements (which is invalid browser JavaScript syntax) and replace them with the actual contents of each required file. The final result is a single bundled JavaScript file (with no require statements)! The most popular module bundler was Browserify, which was released in 2011 and pioneered the usage of node.js style require statements on the frontend (which is essentially what enabled npm to become the frontend package manager of choice). Around 2015, webpack eventually became the more widely used module bundler (fueled by the popularity of the React frontend framework, which took full advantage of webpack’s various features).
-
 - **Transpiling**
     Transpiling code means converting the code in one language to code in another similar language. This is an important part of frontend development — since browsers are slow to add new features, new languages were created with experimental features that transpile to browser compatible languages. For CSS, there’s Sass, Less, and Stylus, to name a few. For JavaScript, the most popular transpiler for a while was CoffeeScript (released around 2010), whereas nowadays most people use babel or TypeScript. 
 
     Babel is not a new language but a transpiler that transpiles next generation JavaScript with features not yet available to all browsers (ES2015 and beyond) to older more compatible JavaScript (ES5). Note that we’re installing 3 separate packages as dev dependencies — @babel/core is the main part of babel, @babel/preset-env is a preset defining which new JavaScript features to transpile, and babel-loader is a package to enable babel to work with webpack. We can configure webpack to use babel-loader.
 
     But there’s still some unpolished edges in our workflow. If we’re concerned about performance, we should be minifying the bundle file, which should be easy enough since we’re already incorporating a build step. We also need to re-run the webpack command each time we change the JavaScript, which gets old real fast. So the next thing we’ll look at are some convenience tools to solve these issues.
-
 - **Tooling Automation Build**
     Now that we’re invested in using a build step to work with JavaScript modules, it makes sense to use a task runner, which is a tool that automates different parts of the build process. For frontend development, tasks include minifying code, optimizing images, running tests, etc.
 
@@ -301,7 +298,6 @@
 
     - [Kate Hudson talk on Webpack](https://www.youtube.com/watch?v=0RYETb9YVrk)
     - [Webpack](https://webpack.js.org/guides/development/)
-
 - **Other**
     - [Traceur Compiler](https://github.com/google/traceur-compiler)
     - [Systemjs](https://github.com/systemjs/systemjs)
@@ -314,17 +310,10 @@
 # CSS
 - https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525
 - **Float**: the three columns are not equal in height, and the page doesn’t fill the height of the screen. These issues are inherent with a float-based approach. All a float can do is place content to the left or right of a section — the CSS has no way to infer the heights of the content in the other sections. This problem had no straightforward solution until many years later, with a flexbox-based layout.
-- **Flex**: 
-[Solved By Flexbox](https://github.com/philipwalton/solved-by-flexbox) 
+- **Flex**: [Solved By Flexbox](https://github.com/philipwalton/solved-by-flexbox). Flexbox eliminates a lot of the float hacks, but the code isn’t as expressive as it could be for defining layout. It’s hard to read the flexbox CSS and get a visual understanding how all of the elements will be laid out on the page. This leads to a lot of guessing and checking when writing flexbox-based layouts.
+- **Css Grid**: [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-Flexbox eliminates a lot of the float hacks, but the code isn’t as expressive as it could be for defining layout. It’s hard to read the flexbox CSS and get a visual understanding how all of the elements will be laid out on the page. This leads to a lot of guessing and checking when writing flexbox-based layouts.
-- **Css Grid**: 
-[Complete-Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-
-- **Pseudoelements**:
-https://www.smashingmagazine.com/2011/07/learning-to-use-the-before-and-after-pseudo-elements-in-css/
-
-`::before` and `::after`, many of the uses involve graphics but no actual word content. You must set both the `content:"";` property and if your content is empty the `display:inline-block` property or the psuedoelement will not show up. 
+- **Pseudoelements**: [Pseudo Elements In Css](https://www.smashingmagazine.com/2011/07/learning-to-use-the-before-and-after-pseudo-elements-in-css/). `::before` and `::after`, many of the uses involve graphics but no actual word content. You must set both the `content:"";` property and if your content is empty the `display:inline-block` property or the psuedoelement will not show up. 
 
 - **CSS Selectors**:
 https://codepen.io/pehaa/pen/ROapJZ
@@ -341,7 +330,7 @@ https://codepen.io/pehaa/pen/ROapJZ
     - **CSS in JS**: a methodology organized around defining CSS styles not in a separate style sheet, but directly in each component itself. It was introduced as an approach for the React JavaScript framework (which already took the controversial approach of defining the HTML for a component directly in JavaScript instead of a separate HTML file). Originally the methodology used inline styles, but later implementations used JavaScript to generate CSS (with unique class names based on the component) and insert it into the document with a style tag. The CSS in JS methodology once again goes completely against established CSS best practices of separation of concerns.
 
 # Console
-[Chrome-devtools](https://developers.google.com/web/tools/chrome-devtools/)
+[Chrome Devtools](https://developers.google.com/web/tools/chrome-devtools/)
 
     // Formatted Strings
     console.log(
@@ -403,7 +392,7 @@ https://codepen.io/pehaa/pen/ROapJZ
 
 # Other
 - [Glossary of Modern JS Concepts](https://auth0.com/blog/glossary-of-modern-javascript-concepts/)
-- [A better way to code](https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0) by Mike Bostock:
+- [A Better Way To Code](https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0) by Mike Bostock:
     - A danger of spending so long designing a tool is that you may forget what the tool is for: the tool itself becomes the goal, rather than the value derived from its application.
     - The purpose of a visualization tool is to construct visualizations. But what is the purpose of visualization? Per Ben Shneiderman: The purpose of visualization is insight, not pictures.
     - Visualization is a means to an end. A means to insight. A way to think, to understand, to discover, and to communicate something about the world. If we consider only the task of assigning visual encodings, of constructing visualizations, we ignore myriad other challenges: finding relevant data, cleaning it, transforming it into efficient structures, analyzing it with statistics, modeling, explaining our discoveries.
