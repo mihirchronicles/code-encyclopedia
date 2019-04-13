@@ -342,64 +342,65 @@ https://codepen.io/pehaa/pen/ROapJZ
     - **CSS in JS**: a methodology organized around defining CSS styles not in a separate style sheet, but directly in each component itself. It was introduced as an approach for the React JavaScript framework (which already took the controversial approach of defining the HTML for a component directly in JavaScript instead of a separate HTML file). Originally the methodology used inline styles, but later implementations used JavaScript to generate CSS (with unique class names based on the component) and insert it into the document with a style tag. The CSS in JS methodology once again goes completely against established CSS best practices of separation of concerns.
 
 # Console
-[Chrome-devtools/](https://developers.google.com/web/tools/chrome-devtools/)
+[Chrome-devtools](https://developers.google.com/web/tools/chrome-devtools/)
 
-// Formatted Strings
-console.log(
-    "%c The quick %c brown %c fox jumps over the %c lazy dog",
-    "font-size: 34px;",
-    "font-size: 24px; color: brown;",
-    "color: orange;",
-    "color: black; font-weight: bold;"
-)
-
-// Formatted Strings with Css styling
-for (let i = 0; i < 10; i++) {
+    // Formatted Strings
     console.log(
-    "%s I've been called %d times, this is the document body %o",
-    "Hello", i, document.body
-    );
-}
+        "%c The quick %c brown %c fox jumps over the %c lazy dog",
+        "font-size: 34px;",
+        "font-size: 24px; color: brown;",
+        "color: orange;",
+        "color: black; font-weight: bold;"
+    )
 
-// Object Tables
-var animals = [
-    { kind: 'Horse', name: 'Henry', age: 43 },
-    { kind: 'Dog', name: 'Spot', age: 13 },
-    { kind: 'Cat', name: ' Mittens', age: 18 },
-];
-console.table(animals);
-
-// Tracing function calls
-// The console.trace method lets you dump a stack trace in the console — 
-// in other words, the path the runtime took to call that function — 
-// which is useful in tracking down the function responsible for passing bad data.
-function foo() {
-    bar();
-    function bar() {
-    console.trace();
+    // Formatted Strings with Css styling
+    for (let i = 0; i < 10; i++) {
+        console.log(
+        "%s I've been called %d times, this is the document body %o",
+        "Hello", i, document.body
+        );
     }
-}
-foo();
 
-// Counting function calls
-window.addEventListener('click', function(event) {
-    console.count(event.type);
-    console.log(event);
-});
-// To reset a counter, you just need to call below with the label, and it will reset back to zero.
-console.countReset();
+    // Object Tables
+    var animals = [
+        { kind: 'Horse', name: 'Henry', age: 43 },
+        { kind: 'Dog', name: 'Spot', age: 13 },
+        { kind: 'Cat', name: ' Mittens', age: 18 },
+    ];
+    console.table(animals);
 
-// Grouping Information in collapsible list
-console.group('First group');
-console.log('First message');
-console.group('A group inside the first group');
-console.log('A message inside the group inside the first group'); console.log('Another message inside the group inside the first group');
-console.groupEnd();
-console.log('Second message'); console.groupEnd();
+    // Tracing function calls
+    // The console.trace method lets you dump a stack trace in the console — 
+    // in other words, the path the runtime took to call that function — 
+    // which is useful in tracking down the function responsible for passing bad data.
+    function foo() {
+        bar();
+        function bar() {
+        console.trace();
+        }
+    }
+    foo();
 
-// Inspecting State
-$_ variable holds the most recent expression that was evaluated in the console context.
-And $0 through $4 holds the most recent element that was inspected with inspect element
+    // Counting function calls
+    window.addEventListener('click', function(event) {
+        console.count(event.type);
+        console.log(event);
+    });
+
+    // To reset a counter, you just need to call below with the label, and it will reset back to zero.
+    console.countReset();
+
+    // Grouping Information in collapsible list
+    console.group('First group');
+    console.log('First message');
+    console.group('A group inside the first group');
+    console.log('A message inside the group inside the first group'); console.log('Another message inside the group inside the first group');
+    console.groupEnd();
+    console.log('Second message'); console.groupEnd();
+
+    // Inspecting State
+    $_ variable holds the most recent expression that was evaluated in the console context.
+    And $0 through $4 holds the most recent element that was inspected with inspect element
 
 # Other
 - [Glossary of Modern JS Concepts](https://auth0.com/blog/glossary-of-modern-javascript-concepts/)
