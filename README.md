@@ -1,8 +1,8 @@
 # House of Commands
 
-Useful development shortcuts and commands I use on daily basis.
+Useful shortcuts and commands I use or have used to optimize my productivity.
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 1. Window Management 
     - **close one window, or tab.**: `command + w`
@@ -36,7 +36,7 @@ Useful development shortcuts and commands I use on daily basis.
     - **previous command**: `ctrl + P`
     - **next command**: `ctrl + R`
 
-## Shell Command Line
+### Shell Command Line
 
 - **find path and package**: `which [package name] git`
 - **cursor at the beginning of the line**: `control + A`
@@ -80,7 +80,7 @@ Useful development shortcuts and commands I use on daily basis.
     $ tail -n 3 calc_process.log | grep final | tr '{' '\n' | grep startdate | sed -e 's/}.*$//g'
     `
 
-## VIM
+### VIM
 
 - **to find text in VIM**: `/ or ? text`
 - **go to bottom**: `Shift +G`
@@ -96,7 +96,7 @@ Useful development shortcuts and commands I use on daily basis.
 - **find and replace all**: `:%s/foo/bar/g`
 - **delete all**: `go on top of line gg and to delete all- dG`
 
-## GREP
+### GREP
 
 1. Search the contents of files using grep:
     - **find version of a file**: `command name, version, filename: grep version package.json`
@@ -149,18 +149,18 @@ Useful development shortcuts and commands I use on daily basis.
     - **inverse search (stuff that does’t match)**: `find examples/angularjs -name “*js” | grep -v “node modules”`
     - **inverse Search combo**: `find examples -name “*js” | grep -vE “node_modules|Spec”`
 
-## GIT
+### GIT
 
 - **resetting git**: `git reset --hard HEAD`
 - **pull to original settings**: `git pull - - rebase`
 
-## NPM scripts
+### NPM scripts
 
 - **omit npm config**: `npm init -y`
 - **alias shortcut**: `npm install —save alias: npm i -S`
 - **dev shortcut**: `npm —save-dev: npm i -D`
 
-## Folder Structure
+### Folder Structure
 
 - **executable files**:`bin` 
 - **3rd party libraries**: `lib` 
@@ -173,7 +173,9 @@ Useful development shortcuts and commands I use on daily basis.
 
 # Notes
 
-### Debugging
+List of topics that are useful for my day-to-day work.
+
+### Debugging & Console
 Debugging is one of the key skills required to be a great developer. Below are the key things you need to know when working with the debugger.
 
 1. Step over code, steps over a function that doesn't contain a bug and runs its code
@@ -239,8 +241,70 @@ console.table([cat, dog, fish])
 
 Not only will there be a nicely-formatted table to see in the console, but the (unlabeled) objects will also be displayed as well.
 
+Check out [Chrome Devtools](https://developers.google.com/web/tools/chrome-devtools/) to learn more.
+
+```js
+    // Formatted Strings
+    console.log(
+        "%c The quick %c brown %c fox jumps over the %c lazy dog",
+        "font-size: 34px;",
+        "font-size: 24px; color: brown;",
+        "color: orange;",
+        "color: black; font-weight: bold;"
+    )
+
+    // Formatted Strings with Css styling
+    for (let i = 0; i < 10; i++) {
+        console.log(
+        "%s I've been called %d times, this is the document body %o",
+        "Hello", i, document.body
+        );
+    }
+
+    // Object Tables
+    var animals = [
+        { kind: 'Horse', name: 'Henry', age: 43 },
+        { kind: 'Dog', name: 'Spot', age: 13 },
+        { kind: 'Cat', name: ' Mittens', age: 18 },
+    ];
+    console.table(animals);
+
+    // Tracing function calls
+    // The console.trace method lets you dump a stack trace in the console — 
+    // in other words, the path the runtime took to call that function — 
+    // which is useful in tracking down the function responsible for passing bad data.
+    function foo() {
+        bar();
+        function bar() {
+        console.trace();
+        }
+    }
+    foo();
+
+    // Counting function calls
+    window.addEventListener('click', function(event) {
+        console.count(event.type);
+        console.log(event);
+    });
+
+    // To reset a counter, you just need to call below with the label, and it will reset back to zero.
+    console.countReset();
+
+    // Grouping Information in collapsible list
+    console.group('First group');
+    console.log('First message');
+    console.group('A group inside the first group');
+    console.log('A message inside the group inside the first group'); console.log('Another message inside the group inside the first group');
+    console.groupEnd();
+    console.log('Second message'); console.groupEnd();
+
+    // Inspecting State
+    $_ variable holds the most recent expression that was evaluated in the console context.
+    And $0 through $4 holds the most recent element that was inspected with inspect element
+```
+
 ### BEM
-I keep getting tripped up at work by forgetting to write modular CSS classes. There are so many benefits to a robust CSS architecture that I really want to get it right. BEM is a methodology to achieve this. `Block`, `Element` and `Modifier`. A `Block` is a component or feature than can stand alone and is not dependent on any other code. It can be re-used anywhere. Next, an `Element`. This is always part of a `Block` and has no meaning on its own. Lastly, there is the `Modifier`. This changes the behaviour and/or appearance of a `Block` or `Element`.
+BEM is a methodology used for modular CSS classes. A robust CSS architecture can help navigate large codebase. `Block`, `Element` and `Modifier`. A `Block` is a component or feature than can stand alone and is not dependent on any other code. It can be re-used anywhere. Next, an `Element`. This is always part of a `Block` and has no meaning on its own. Lastly, there is the `Modifier`. This changes the behavior and/or an appearance of a `Block` or `Element`.
 
 Example:
 
@@ -253,7 +317,7 @@ __`.button--confirm`__ is a modifier.
 See resources [here](http://getbem.com/introduction/) and [here](https://zellwk.com/blog/css-architecture-1/).
 
 ### Arrow
-Also known as a fat arrow, `=>`. This ES6 feature is a fat topic, so I'll concentrate on one aspect today.
+Also known as a fat arrow, `=>`.
 
 ```jsx
 var elements = [
@@ -269,28 +333,27 @@ var elements = [
 (elements.map(({length}) => length))
 ```
 
-Above is an altered version of the [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) JavaScript Demo, where you will find a wealth of information on what fat arrows can do for you. The first function in the list is written without fat arrows. The last three functions are variations of the first function, showing how fat arrows can be used to write shorter function expressions, and therefore less code. You will need a code compiler like [Babel](https://babeljs.io/) to compile fat arrows into ES5 syntax so older browsers can use your JavaScript.
+The first function in the list is written without fat arrows. The last three functions are variations of the first function, showing how fat arrows can be used to write shorter function expressions, and therefore less code. You will need a code compiler like [Babel](https://babeljs.io/) to compile fat arrows into ES5 syntax so older browsers can use ES6 JavaScript.
 
-There are a _lot_ of resources that try explaining this syntax. Try Wes Bos's [introduction](https://wesbos.com/arrow-functions/) for a start. This is complicated subject matter, though, so I suggest searching around for different posts, reading a few and finding ones that make most sense to you.
+There are a _lot_ of resources that try explaining this syntax. Wes Bos's [introduction](https://wesbos.com/arrow-functions/) or [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) are great resources to get started.
 
 ### Psuedo Selectors
 
-I only just found out that `::before` (`:before`) and `::after` (`:after`) are pseudo elements, which are different from pseudo classes. Both of these are grouped under pseudo selectors. I like this quote from MDN ~
+`::before` (`:before`) and `::after` (`:after`) are pseudo elements, which are different from pseudo classes. Both of these are grouped under pseudo selectors. I like this quote from MDN ~
 
 > Even the most skilled web developers are still amazed by what's possible using selectors.
 
-pseudo selectors are only two types of selectors. The others are: simple selectors, attribute selectors, multiple selectors and combinators. All of these help us to target and style HTML elements.
-
-So, pseudo selectors include both pseudo elements and pseudo classes. They are added to the end of other selectors, and don't apply to whole elements, only parts of them.
+Pseudo selectors are only two types of selectors. The others are: simple selectors, attribute selectors, multiple selectors and combinators. All of these help us to target and style HTML elements. So, pseudo selectors include both pseudo elements and pseudo classes. They are added to the end of other selectors, and don't apply to whole elements, only parts of them.
 
 The pseudo classes (e.g. `:hover`, `:focus`, and `:nth-of-type()` - plus 38 others) style elements in a _certain state_.
 
-The pseudo elements (e.g. `::after`, `::before`, and `::first-letter` - plus 3 others, not including experimental ones) apparently need `::` rather than `:`, although I've used them with only one. These don't depend on the state of an element.
+The pseudo elements (e.g. `::after`, `::before`, and `::first-letter` - plus 3 others, not including experimental ones) apparently need `::` rather than `:`. These don't depend on the state of an element.
 
-See this [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements) page for great examples and to use their awesome active learning playground (I did and it was great for learning)!
+[MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements) page has great examples and learning playground to learn the topic.
 
 ### Strings
 
+This list is meant as a quick and basic introduction to JavaScript strings.
 
 *   A sequence containing some letters, numbers or symbols.
 *   Have available methods and properties.
@@ -307,13 +370,12 @@ See this [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_t
 *   Each character is indexed and can be accessed by an index number using square bracket notation (e.g. "Hello World" - `myString[0]` outputs "H").
 *   Similar methods to the one above include: `charAt()`, `indexOf()`, `lastIndexOf()`, `slice()`.
 *   Other common methods and properties are: `length`, `toUpperCase()`, `toLowerCase()`, `split()`, `trim()`, `replace()`.
-
-This list is meant as a quick and basic introduction to the magical world of JavaScript strings. If there's something you'd like me to add, let me know!
+*   Use [Escape Tool](https://www.the-art-of-web.com/javascript/escape/) if you run into escape character issues.
 
 Many thanks to my good friend <a href="https://twitter.com/qubyte">Mark</a> for suggesting additions :)
 
 ### Ternary Operators
-This is one of my favourite things in JavaScript. Not only is it simple and easy to use but it's also applicable to lots of situations **and** it can replace more verbose syntax (like `if` statements). It looks something like this:
+It can replace more verbose syntax (like `if` statements). It looks something like this:
 
 ```js
 const hoursOfSleep = 5;
@@ -322,13 +384,7 @@ const timeForSleep = (hoursOfSleep < 8) ?
     "Ah nah, a few more minutes of phone time won't hurt"; 
 ```
 
-Notice the **?** and the **:**
-
-These are the important parts.
-
-If the condition (in this case `hoursOfSleep`) in front of the question mark evaluates to true, the value of the first expression before the colon is returned. If the condition in front of the question mark evaluates to false, the value of the second expression after the colon is returned. As you can see, if you have had less than 8 hours of sleep, you shouldn't be using your phone.
-
-Ternary operators are really flexible and can be used in a number of ways. You can stack them together:
+Notice the **?** and the **:** These are the important parts. If the condition (in this case `hoursOfSleep`) in front of the question mark evaluates to true, the value of the first expression before the colon is returned. If the condition in front of the question mark evaluates to false, the value of the second expression after the colon is returned. As you can see, if you have had less than 8 hours of sleep, you shouldn't be using your phone. Ternary operators are really flexible and can be used in a number of ways. You can stack them together:
 
 ```js
 const catsRule = true,
@@ -336,24 +392,19 @@ const dogsDrool = false,
 const catDog = catsRule ? 
     (dogsDrool ? "Let's all live in harmony": "Both cats and dogs drool") :
     (dogsDrool ? "Dogs are cool, nearly as cool as cats" : "Dogs and cats can be friends");
+// Output: `"Both cats and dogs drool"`
 ```
 
-This outputs `"Both cats and dogs drool"`, and it's also total nonsense but I hope you had fun staring at it and trying to figure it out. You don't even need to use the parentheses, and can also use multiple statements separated by commas. You can return statements in functions. You can use them in place of bulky `if/else` statements with much nicer-to-read code. The question mark means `if` and the colon means `else`.
-
-I use ternary operators at work all the time. I hope you enjoy them as much as I do. Check out the [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) page for some examples. This [post](https://scotch.io/tutorials/understand-the-javascript-ternary-operator-like-abc) is lovely too.
+You don't even need to use the parentheses, and can also use multiple statements separated by commas. You can return statements in functions. You can use them in place of bulky `if/else` statements with much nicer-to-read code. The question mark means `if` and the colon means `else`. Check out the [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) and [this post](https://scotch.io/tutorials/understand-the-javascript-ternary-operator-like-abc).
 
 ### Testing
-Today at work, we talked about test automation. One of the developers mentioned this quote:
+A well functioning team cannot rely on creating features in a hurry, throwing them over the fence and then expecting our applications to work well and without bugs. To instil quality from the start of a feature, there should be tests for it.
 
-> We cannot rely on mass inspection to improve quality, though there are times when 100 percent inspection is necessary. As Harold S. Dodge said many years ago, â€˜You cannot inspect quality into a product.â€™ The quality is there or it isnâ€™t by the time itâ€™s inspected. - William E. Deming in _Out of the Crisis_
+Automated testing helps with this. Pre-commit hooks can be used when deploying builds so that errors are caught and addressed early. Unit tests can be run using pre-commit hooks. See a post [here](https://amberwilson.co.uk/blog/unit-tests/). However, there is a fine line between having too many automated tests, e.g. end-to-end tests that take too long to run with each build, and not having enough. Some companies run quicker unit tests on each build, and then run end-to-end tests as a nightly build.
 
-Therefore we cannot rely on creating features in a hurry, throwing them over the fence and then expecting our applications to work well and without bugs. To instil quality from the start of a feature, there should be tests for it.
+See the image [The Testing Pyramid](http://blog.xebia.com/its-2017-test-automation-is-not-optional-when-building-mobile-apps/) for one of many examples of the testing pyramid to understand unit tests or end-to-end (UI) tests.
 
-Automated testing helps with this. Pre-commit hooks can be used when deploying builds so that errors are caught and addressed early. Unit tests can be run using pre-commit hooks - see my post on unit tests [here](https://amberwilson.co.uk/blog/unit-tests/). However, there is a fine line between having too many automated tests, e.g. end-to-end tests that take too long to run with each build, and not having enough. Some companies run quicker unit tests on each build, and then run end-to-end tests as a nightly build.
-
-Please see the image [The Testing Pyramid](http://blog.xebia.com/its-2017-test-automation-is-not-optional-when-building-mobile-apps/) for one of many examples of the testing pyramid if you are confused when I mention unit tests or end-to-end (UI) tests.
-
-Manual testing is important too. It is usually done by QA engineers, and helps reveal edge cases that automated tests do not catch. As one developer at my work said, these tests are like the cherry on top of the testing pyramid.
+Manual testing is important too. It is usually done by QA engineers, and helps reveal edge cases that automated tests do not catch.
 
 ### Types
 JavaScript has six primitive types. These all have default values and can be checked for using the `typeof` operator.
@@ -376,260 +427,344 @@ if (typeof myPrimitive !== 'number')
   throw new TypeError('Type must be a number!')
 ```
 
-# OTHER NOTES
+### Event Loops
+- https://www.youtube.com/watch?v=8aGhZQkoFbQ
+- http://latentflip.com/loupe/
+- Transcript: https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html
+- JS is a single threaded programing language runtime. One code piece at a time. It has a single call stack.
+- I'm a single threaded on blocking asynchronous concurrently glitch
+- V8 is a heap and stack
+- JavaScript programmers like to use words like, “event-loop”, “non-blocking”, “callback”, “asynchronous”, “single-threaded” and “concurrency”.
+- We can do things concurrently in browser because a browser is more than a run-time. It has APIs. You call Web APIs. In node, you have C++ multi-thread.
+- API does not live in V8 engine. It is part of XHR().
+- [How Does Javascript actually work?](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
+- The Engine consists of two main components:* Memory Heap — this is where the memory allocation happens* Call Stack — this is where your stack frames are as your code executes
+- JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.
+- The Call Stack is a data structure which records basically where in the program we are. If we step into a function, we put it on the top of the stack. If we return from a function, we pop off the top of the stack. That’s all the stack can do.
 
-- **Event Loop**: 
-    - https://www.youtube.com/watch?v=8aGhZQkoFbQ
-    - http://latentflip.com/loupe/
-    - Transcript: https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html
-    - JS is a single threaded programing language runtime. One code piece at a time. It has a single call stack.
-    - I'm a single threaded on blocking asynchronous concurrently glitch
-    - V8 is a heap and stack
-    - JavaScript programmers like to use words like, “event-loop”, “non-blocking”, “callback”, “asynchronous”, “single-threaded” and “concurrency”.
-    - We can do things concurrently in browser because a browser is more than a run-time. It has APIs. You call Web APIs. In node, you have C++ multi-thread.
-    - API does not live in V8 engine. It is part of XHR().
-    - [How Does Javascript actually work?](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
-    - The Engine consists of two main components:* Memory Heap — this is where the memory allocation happens* Call Stack — this is where your stack frames are as your code executes
-    - JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.
-    - The Call Stack is a data structure which records basically where in the program we are. If we step into a function, we put it on the top of the stack. If we return from a function, we pop off the top of the stack. That’s all the stack can do.
 
-- **JS Optimization & Performance**: (why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress)
-    - [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
-    - why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
+### Optimization & Performance 
 
-- **Syntax Parsers**: a program that reads your code and determines what it does and if its grammar is valid. Compiler or interpreter needs to transfer the code to the computer.
-- **Lexical Environment**: where something sits physically in code you write. For example: a variable sits lexically inside a function.
-- **Execution Context**: a wrapper to help manage the code that is running.There are lots of lexical environments. Which one is currently running? A base execution context is global. It creates two things for you: Global Object and “this.”
-- **Name/Value Pairs**: A name which maps to a unique value. For ex: Address = “100 Main St.”
-- **Object**: is a collection of name value pairs.
-- **The Execution Context**: Creation and Hoisting
-- **Hoisting**: function and variables are hoisted to the top but JS engine is not moving the code physically. It is just run line by line.
-- **Creation Phase**: 
-    - Execution context is created - Global Object, “this”
-    - Outer Env - Setup memory space for variables and Functions 
-    - “Hoisting” - Hoisting: Variables setup (set equal to undefined)
-    - Functions setup - All variables in JS are set to undefined initially. 
-    - not defined != undefined: `undefined` is a special keyword in JS. It takes up memory space. If not declared, you will get `Uncaught Reference error: x is not defined`.
-    - Never set a variable to `undefined`. If you define it then it is hard to debug whether you undefined or the JS engine undefined.
-- **Code Execution Phase**: executes line by line
+Why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
+- [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
+- why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
 
-        function b() {
-            console.log('Called b!');
-        }
-        b();
-        
-        console.log(a);
-        var a = "Hello World";
-        console.log(a);
-        
-        // Called b!
-        // undefined
-        // Hello World
+### Syntax Parsers
 
-- **Single Threaded**: One command at a time. Javascript behaves in a single threaded manner.
-- **Synchronous**: One at a time and in order.
-- JS is a single threaded synchronous language
-- **Invocation**: running a function by using parenthesis(). You tell JS engine to run the function. For ex:
+a program that reads your code and determines what it does and if its grammar is valid. Compiler or interpreter needs to transfer the code to the computer.
 
-        function b() {
-        }
-        function a() {
-            b();
-        }
-        a();
+### Lexical Environment
 
-    1. Global Execution Context (create and code is executed): `window` object
-    2. A new execution context stack is created for `a()` 
-    3. Another execution context is created for `b()`(create and execute). At the top of the stack. Then `a()` gets executed then global.
-    4. Runs code line by line and each invocation goes in execution context stack. Once the code is executed, it is popped off from a stack. Everytime a function is called, a new execution context is created and popped off after the code is finished.
-- **Variable Environments**: where the variables live and how they relate to each other in memory.
+where something sits physically in code you write. For example: a variable sits lexically inside a function.
 
-        function b() {
-            var myVar;
-            console.log(myVar);
-        }
-        
-        function a() {
-            var myVar =2;
-            console.log(myVar);
-            b();
-        }
-        
-        var myVar = 1;
-        console.log(myVar);
-        a();
-        console.log(myVar); //global execution context
-        
-        // 1
-        // 2
-        // undefined
-        // 1
 
-    1. Global Execution Context (created and code is executed). myVar gets memory allocation for the value of 1.
-    2. Execution Context is created for `a()`. myVar gets the value of 2. Note, every execution context has its own variable environment.
-    3.  Execution Context is created for `b()`. myVar gets the value of `undefined`. It is not set to a value so the memory will allocate `undefined`.
-    4. Even if `myVar` is defined 3 times, they are all unique and have their own values.
-- **The Scope Chain**: Inherits the value from an outer environment. Every execution context has access to its outer environment (global). Lexical Environment: where does the function sit. It does not matter where these functions sit but how it gets executed. If it cannot find reference within its execution context, it will find reference value from its outside environment down the global chain. Finding and accessing outer environment is called a scope chain.
+### Execution Context 
 
-        function a() {
-            function b() {
-            }
-            
-            var myVar = 2;
-            b();
-        }
-        
-        var myVar = 1;
-        a(); // 2 
-        b(); // Uncaught Reference: b is not defined
+A wrapper to help manage the code that is running.There are lots of lexical environments. Which one is currently running? A base execution context is global. It creates two things for you: Global Object and “this.”
 
-    - `function b()` above sits inside `function a()` . Lexical environment of `b()` has now changed. `a()` is lexically visible but not `b()`.
-    - `a()` outputs 2. Since b is sitting physically inside `a()`, it went to its environment, otherwise it will go up to its scope chain. The best way to think about it is where is the variable environment sitting lexically.
-- **Scope**: where a variable is available in your code. And it it's truly the same variable, or a new copy.
+### Name/Value Pairs 
+
+A name which maps to a unique value. For ex: Address = “100 Main St.”
+### Object
+It is a collection of name value pairs.
+
+### The Execution Context 
+
+Creation and Hoisting
+
+### Hoisting
+
+Function and variables are hoisted to the top but JS engine is not moving the code physically. It is just run line by line.
+
+### Creation Phase
+- Execution context is created - Global Object, “this”
+- Outer Env - Setup memory space for variables and Functions 
+- “Hoisting” - Hoisting: Variables setup (set equal to undefined)
+- Functions setup - All variables in JS are set to undefined initially. 
+- not defined != undefined: `undefined` is a special keyword in JS. It takes up memory space. If not declared, you will get `Uncaught Reference error: x is not defined`.
+- Never set a variable to `undefined`. If you define it then it is hard to debug whether you undefined or the JS engine undefined.
+
+### Code Execution Phase
+
+Executes line by line
+
+```js
+function b() {
+    console.log('Called b!');
+}
+b();
+
+console.log(a);
+var a = "Hello World";
+console.log(a);
+
+// Called b!
+// undefined
+// Hello World
+```
+
+### Single Threaded
+
+One command at a time. Javascript behaves in a single threaded manner.
+
+### Synchronous 
+
+One at a time and in order. JS is a single threaded synchronous language
+
+### Invocation
+
+Running a function by using parenthesis(). You tell JS engine to run the function. For ex:
+
+```js
+function b() {
+}
+function a() {
+    b();
+}
+a();
+```
+1. Global Execution Context (create and code is executed): `window` object
+2. A new execution context stack is created for `a()` 
+3. Another execution context is created for `b()`(create and execute). At the top of the stack. Then `a()` gets executed then global.
+4. Runs code line by line and each invocation goes in execution context stack. Once the code is executed, it is popped off from a stack. Everytime a function is called, a new execution context is created and popped off after the code is finished.
+
+### Variable Environments 
+
+Where the variables live and how they relate to each other in memory.
+
+```js
+function b() {
+    var myVar;
+    console.log(myVar);
+}
+
+function a() {
+    var myVar =2;
+    console.log(myVar);
+    b();
+}
+
+var myVar = 1;
+console.log(myVar);
+a();
+console.log(myVar); //global execution context
+
+// 1
+// 2
+// undefined
+// 1
+```
+
+1. Global Execution Context (created and code is executed). myVar gets memory allocation for the value of 1.
+2. Execution Context is created for `a()`. myVar gets the value of 2. Note, every execution context has its own variable environment.
+3.  Execution Context is created for `b()`. myVar gets the value of `undefined`. It is not set to a value so the memory will allocate `undefined`.
+4. Even if `myVar` is defined 3 times, they are all unique and have their own values.
+
+### The Scope Chain 
+
+Inherits the value from an outer environment. Every execution context has access to its outer environment (global). Lexical Environment: where does the function sit. It does not matter where these functions sit but how it gets executed. If it cannot find reference within its execution context, it will find reference value from its outside environment down the global chain. Finding and accessing outer environment is called a scope chain.
+
+```js
+function a() {
+    function b() {
+    }
+
+    var myVar = 2;
+    b();
+}
+
+var myVar = 1;
+a(); // 2 
+b(); // Uncaught Reference: b is not defined
+ ```
+
+- `function b()` above sits inside `function a()` . Lexical environment of `b()` has now changed. `a()` is lexically visible but not `b()`.
+- `a()` outputs 2. Since b is sitting physically inside `a()`, it went to its environment, otherwise it will go up to its scope chain. The best way to think about it is where is the variable environment sitting lexically.
+
+### Scope 
+
+where a variable is available in your code. And it it's truly the same variable, or a new copy.
+
 - **`let`**: allows for block scoping {}. Variables are only available inside that block. You can use both `var` and `let` in both ES6.
 - **Asynchronous callback:** More than one at a time. Code is executing within the engine at the same time. But JS is synchronous. Keep in mind, browser has more than just JS engine. It has rendering engine, http request or hooks.
-    - **Event** **Queue**: An event gets placed on queue. When the execution stack is empty and looks for event queue to see if there are events sitting in the queue. The event gets processed and the next event moves up. Event queue will only get processed once the execution context is empty.
-    - Code is running line by line (synchronously), by JS engine. However, the browser is processing other engines and makes asynchronous possible.
 
-            // long running function
-            function waitThreeSeconds() {
-                var ms = 3000 + new Date().getTime();
-                while (new Date() < ms){}
-                console.log('finished function');
-            }
-            
-            function clickHandler() {
-                console.log('click event!');   
-            }
-            
-            // listen for the click event
-            document.addEventListener('click', clickHandler);
-            
-            
-            waitThreeSeconds();
-            console.log('finished execution');
+### Event and Queue
 
-        - if you don't click, you will get 2 finished functions
-        - if you click, you will get 2 finished functions then click event! It is because the code gets executed and then event queue gets processed. Event queue won't be processed until execution context is empty. This is how asynchronous is possible (not handled by JS engine but browser).
-- **Dynamic Typing**: you don't tell the engine what type of data a variable holds, it figures it out while your code is running. Variables can hold different types of values because it's all figured out during execution. Javascript is dynamically typed. This can be powerful but also very bad.
-- **Static** **Typing**: Other languages like C# or Java, types need to be explicitly defined.
-- **Primitive Types**: A type of data that represents a single value. That is, not an object. There are 6 types in JS.
+An event gets placed on queue. When the execution stack is empty and looks for event queue to see if there are events sitting in the queue. The event gets processed and the next event moves up. Event queue will only get processed once the execution context is empty.
+
+- Code is running line by line (synchronously), by JS engine. However, the browser is processing other engines and makes asynchronous possible.
+
+```js
+// long running function
+function waitThreeSeconds() {
+    var ms = 3000 + new Date().getTime();
+    while (new Date() < ms){}
+    console.log('finished function');
+}
+
+function clickHandler() {
+    console.log('click event!');   
+}
+
+// listen for the click event
+document.addEventListener('click', clickHandler);
+
+
+waitThreeSeconds();
+console.log('finished execution');
+```
+
+- if you don't click, you will get 2 finished functions
+- if you click, you will get 2 finished functions then click event! It is because the code gets executed and then event queue gets processed. Event queue won't be processed until execution context is empty. This is how asynchronous is possible (not handled by JS engine but browser).
+
+### Dynamic Typing
+
+you don't tell the engine what type of data a variable holds, it figures it out while your code is running. Variables can hold different types of values because it's all figured out during execution. Javascript is dynamically typed. This can be powerful but also very bad.
+### Static Typing
+
+Other languages like C# or Java, types need to be explicitly defined.
+
+### Primitive Types
+
+A type of data that represents a single value. That is, not an object. There are 6 types in JS.
     - `undefined`: represents lack of existence (you shouldn't set a variable to this)
     - `null`: represents lack of existence (you can set a variable to this)
     - `boolean`: true or false
     - `number`: floating point number (there's always some decimal). Unlike other programming languages, there's only one `number` type and it can make math weird.
     - `string`: a sequence of characters. Both '' or "" are allowed.
     - `symbol`: used in ES6, the next version of javascript.
-- **Operators**: a special function that is syntactically (written) differently. Generally operators take two parameters and return one result. Operators are functions. For ex: `+` is an addition function.
+
+### Operators
+A special function that is syntactically (written) differently. Generally operators take two parameters and return one result. Operators are functions. For ex: `+` is an addition function.
     - prefix notation: +3 4
     - postfix notation 34+ (old accounting calculators)
     - infix notation 3+4
-- **Operator Precedence**: which operator function gets called first. Functions are called in order of precedence. *Higher* precedence wins.
+### Operator Precedence
+
+which operator function gets called first. Functions are called in order of precedence. *Higher* precedence wins.
     - Table Precedence: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
-- **Operator Associativity**: what order operator functions get called in: left to right or right to left. When functions have the *same* precedence.
+
+### Operator Associativity
+
+what order operator functions get called in: left to right or right to left. When functions have the *same* precedence.
+
 - Which one gets called first? JS is synchronous so it will execute one operator function at a time. Bigger the precedence number, higher one gets called first.
 
-        // Operator Precedence
-        var a = 3 + 4 * 5; // * has higer precedence acc to the table
-        console.log(a);
+```js
+// Operator Precedence
+var a = 3 + 4 * 5; // * has higer precedence acc to the table
+console.log(a);
 
-        // Operator Associativity
-        var a = 2, b = 3, c = 4;
-        a = b = c;
-        
-        console.log(a); // 4
-        console.log(b); // 4
-        console.log(c); // 4
-        console.log(b=c); true
+// Operator Associativity
+var a = 2, b = 3, c = 4;
+a = b = c;
 
-    - Since one function execution at a time `a` is set to 4 in the memory, `b` is set to 4 in the memory. Right to left associativity.
-- **Coercion**: converting a value from one type to another. Be careful!
+console.log(a); // 4
+console.log(b); // 4
+console.log(c); // 4
+console.log(b=c); true
+```
+- Since one function execution at a time `a` is set to 4 in the memory, `b` is set to 4 in the memory. Right to left associativity.
 
-        var a = 1 + 2; // 3
-        var b = "hello" + " world!"; // hello world
-        var c = 1 + "2"; // 12 coerced
+### Coercion
 
-- **Comparison Operators:** are functions. [MDN Doc Comparison](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
-    - Gochyas Examples
+converting a value from one type to another. Be careful!
 
-            console.log(1 < 2 < 3); // true
-            console.log(3 < 2 < 1); // true due to associtivity 
-            console.log(false < 1); // true bc false gets converted to 0 (aka coerced) 
-            console.log(true < 1); // true bc true gets converted to 1 (aka coerced)
-            Number(false) //0
-            Number(true) //1
-            Number(undefined) //NaN
-            Number(null) //0
-            Boolean(undefined) // false
-            Boolean(null) // false
-            Boolean("") // false
-            Boolean(0) // false
-            false || true // true bc true has higher precedence on the table
-            undefined || 'hello' // "hello" bc it will coerce 
-            Boolean("hello"); // true
-            "hi" || "hello" // "hi" first one
-            undefined || "hello" // hello
-            null || "hello" // hello
-            "" || "hello" // hello
+```js
+var a = 1 + 2; // 3
+var b = "hello" + " world!"; // hello world
+var c = 1 + "2"; // 12 coerced
+```
 
-    - So to not make variables coerced for unexpected output, use strict equality (`===`) or (`!==`). Use Associativity precedence table for a reference. Strict equality does not coerce values.
+### Comparison Operators
 
-            // Equality (==) leads to coercion, confusion and odd potential errors
-            3 == 3 // true
-            "3" == 3 // true
-            false == 0 // true
-            var a = false; // undefined
-            a == 0 // true
-            null == 0 // false
-            null < 1 // true
-            "" == 0 // true
-            "" == false // also true confusing
-            
-            //Strict Equality (===)
-            3 === 3 // true
-            "3" === "3" // true
-            "3" === 3 // false
-            
-            var a = 0;
-            var b = false;
-            if (a===b) {
-                console.log("They are equal!");
-            } else {
-                console.log("Nope, not equal.");
-            }
-            == // They are equal!
-            === // Nope, not equal.
-            
+are functions. [MDN Doc Comparison](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness). Gochyas examples below:
+
+```js
+console.log(1 < 2 < 3); // true
+console.log(3 < 2 < 1); // true due to associtivity 
+console.log(false < 1); // true bc false gets converted to 0 (aka coerced) 
+console.log(true < 1); // true bc true gets converted to 1 (aka coerced)
+Number(false) //0
+Number(true) //1
+Number(undefined) //NaN
+Number(null) //0
+Boolean(undefined) // false
+Boolean(null) // false
+Boolean("") // false
+Boolean(0) // false
+false || true // true bc true has higher precedence on the table
+undefined || 'hello' // "hello" bc it will coerce 
+Boolean("hello"); // true
+"hi" || "hello" // "hi" first one
+undefined || "hello" // hello
+null || "hello" // hello
+"" || "hello" // hello
+```
+
+- So to not make variables coerced for unexpected output, use strict equality (`===`) or (`!==`). Use Associativity precedence table for a reference. Strict equality does not coerce values.
+
+```js
+// Equality (==) leads to coercion, confusion and odd potential errors
+3 == 3 // true
+"3" == 3 // true
+false == 0 // true
+var a = false; // undefined
+a == 0 // true
+null == 0 // false
+null < 1 // true
+"" == 0 // true
+"" == false // also true confusing
+
+//Strict Equality (===)
+3 === 3 // true
+"3" === "3" // true
+"3" === 3 // false
+
+var a = 0;
+var b = false;
+if (a===b) {
+    console.log("They are equal!");
+} else {
+    console.log("Nope, not equal.");
+}
+== // They are equal!
+=== // Nope, not equal.
+```
 
 - Coercion and dynamic typing can be useful for frameworks and libraries.
 
-        var a;
-        
-        // goes to internet and looks for a value.
-        a = "";
-        if(a) { // coercion bc it is not strictly typed
-            console.log('Something is there.');
-        }
+```js
+var a;
+
+// goes to internet and looks for a value.
+a = "";
+if(a) { // coercion bc it is not strictly typed
+    console.log('Something is there.');
+}
+```
 
 - Default Values
 
-        funciton greet (name) {
-            console.log(name); // undefined
-            name = name || '<Your name here>';
-            console.log('Hello ' + name);
-        }
-        greet(); 
-        
-        // undefined
-        // hello undefined // coercecd and concatanted
-        
-        greet('Tony'); // Hello Tony
-        greet(); // Hello <Your name here.>
+```js
+funciton greet (name) {
+    console.log(name); // undefined
+    name = name || '<Your name here>';
+    console.log('Hello ' + name);
+}
+greet(); 
 
-        // Naming library names to stop colliding names
-        window.libraryName = window.libraryName || "Lib 2";
+// undefined
+// hello undefined // coercecd and concatanted
 
-# ES6 Notes
+greet('Tony'); // Hello Tony
+greet(); // Hello <Your name here.>
+
+// Naming library names to stop colliding names
+window.libraryName = window.libraryName || "Lib 2";
+```
+
+## ES6 Notes
 
 - **JS Languages ES6 vs ES5**: Language ECMAScript(ES), Dialect (Javascript). ES5 supported by all browsers. ES6 needs polyfills, transpilers.
 - **Compatibility**: ES6 isn't natively supported by all Browser yet, or at least not all features are. It is important to know which features may or may not be used. This compatibility chart should be helpful to you: [ES6 Comatibility Chart](https://kangax.github.io/compat-table/es6/)
@@ -644,7 +779,7 @@ if (typeof myPrimitive !== 'number')
     - Super and Extend in ES6: https://medium.com/beginners-guide-to-mobile-web-development/super-and-extends-in-javascript-es6-understanding-the-tough-parts-6120372d3420
 
 
-# Tooling
+## Tooling
 
 - [Modern Javascript](https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70)
 
@@ -707,67 +842,6 @@ https://codepen.io/pehaa/pen/ROapJZ
     - **BEM**: a methodology organized around the idea of dividing the user interface into independent blocks. A block is a re-usable component (an example would be a search form, defined as `<form class="search-form"></form>`). An element is a smaller part of a block that can’t be re-used on its own (an example would be a button within the search form, defined as `<button class="search-form__button">Search</button>`). A modifier is an entity that defines the appearance, state, or behavior of a block or element (an example would be a disabled search form button, defined as `<button class="search-form__button search-form__button--disabled">Search</button>`). The BEM methodology is simple to understand, with a specific naming convention that allows newcomers to apply it without having to make complex decisions. The downside for some is that the class names can be quite verbose, and don’t follow traditional rules for writing semantic class names. Later approaches like Atomic CSS would take this untraditional approach to a whole other level!
     - **Atomic CSS (aka Functional CSS)**: a methodology organized around the idea of creating small, single-purpose classes with names based on visual function. This approach is in complete opposition with OOCSS, SMACSS, and BEM — instead of treating elements on the page as re-usable objects, Atomic CSS ignores these objects altogether and uses re-usable single purpose utility classes to style each element. So instead of something like `<button class="search-form__button">Search</button>`, you would have something like `<button class="f6 br3 ph3 pv2 white bg-purple hover-bg-light-purple">Search</button>`. Many people saw this methodology as a complete violation of established CSS best practices. Further read: [https://adamwathan.me/css-utility-classes-and-separation-of-concerns/](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
     - **CSS in JS**: a methodology organized around defining CSS styles not in a separate style sheet, but directly in each component itself. It was introduced as an approach for the React JavaScript framework (which already took the controversial approach of defining the HTML for a component directly in JavaScript instead of a separate HTML file). Originally the methodology used inline styles, but later implementations used JavaScript to generate CSS (with unique class names based on the component) and insert it into the document with a style tag. The CSS in JS methodology once again goes completely against established CSS best practices of separation of concerns.
-
-# Console
-[Chrome Devtools](https://developers.google.com/web/tools/chrome-devtools/)
-
-    // Formatted Strings
-    console.log(
-        "%c The quick %c brown %c fox jumps over the %c lazy dog",
-        "font-size: 34px;",
-        "font-size: 24px; color: brown;",
-        "color: orange;",
-        "color: black; font-weight: bold;"
-    )
-
-    // Formatted Strings with Css styling
-    for (let i = 0; i < 10; i++) {
-        console.log(
-        "%s I've been called %d times, this is the document body %o",
-        "Hello", i, document.body
-        );
-    }
-
-    // Object Tables
-    var animals = [
-        { kind: 'Horse', name: 'Henry', age: 43 },
-        { kind: 'Dog', name: 'Spot', age: 13 },
-        { kind: 'Cat', name: ' Mittens', age: 18 },
-    ];
-    console.table(animals);
-
-    // Tracing function calls
-    // The console.trace method lets you dump a stack trace in the console — 
-    // in other words, the path the runtime took to call that function — 
-    // which is useful in tracking down the function responsible for passing bad data.
-    function foo() {
-        bar();
-        function bar() {
-        console.trace();
-        }
-    }
-    foo();
-
-    // Counting function calls
-    window.addEventListener('click', function(event) {
-        console.count(event.type);
-        console.log(event);
-    });
-
-    // To reset a counter, you just need to call below with the label, and it will reset back to zero.
-    console.countReset();
-
-    // Grouping Information in collapsible list
-    console.group('First group');
-    console.log('First message');
-    console.group('A group inside the first group');
-    console.log('A message inside the group inside the first group'); console.log('Another message inside the group inside the first group');
-    console.groupEnd();
-    console.log('Second message'); console.groupEnd();
-
-    // Inspecting State
-    $_ variable holds the most recent expression that was evaluated in the console context.
-    And $0 through $4 holds the most recent element that was inspected with inspect element
 
 # Other
 - [Glossary of Modern JS Concepts](https://auth0.com/blog/glossary-of-modern-javascript-concepts/)
