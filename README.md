@@ -377,7 +377,7 @@ Check out [Chrome Devtools](https://developers.google.com/web/tools/chrome-devto
     $_ variable holds the most recent expression that was evaluated in the console context.
     And $0 through $4 holds the most recent element that was inspected with inspect element
 ```
-</ details>
+</details>
 
 ### BEM
 <details>
