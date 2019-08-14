@@ -926,9 +926,9 @@ window.libraryName = window.libraryName || "Lib 2";
 <details>
   <summary>Pollyfills</summary>
 
-- https://medium.com/beginners-guide-to-mobile-web-development/introduction-to-polyfills-their-usage-9cd6db4b1923
-- https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
-<details>
+   - https://medium.com/beginners-guide-to-mobile-web-development/introduction-to-polyfills-their-usage-9cd6db4b1923
+   - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+</details>
 
 ## ES6 Notes
 
