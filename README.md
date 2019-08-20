@@ -7,6 +7,8 @@ List of topics that are useful for my day-to-day work.
 <details>
   <summary>Pollyfills</summary>
 
+   - https://developer.mozilla.org/en-US/docs/Glossary/Polyfill
+   - https://remysharp.com/2010/10/08/what-is-a-polyfill
    - https://medium.com/beginners-guide-to-mobile-web-development/introduction-to-polyfills-their-usage-9cd6db4b1923
    - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 </details>
@@ -33,6 +35,7 @@ See resources [here](http://getbem.com/introduction/) and [here](https://zellwk.
 
 <details>
   <summary>Psuedo Selectors</summary>
+
 `::before` (`:before`) and `::after` (`:after`) are pseudo elements, which are different from pseudo classes. Both of these are grouped under pseudo selectors. I like this quote from MDN ~
 
 > Even the most skilled web developers are still amazed by what's possible using selectors.
@@ -43,14 +46,14 @@ The pseudo classes (e.g. `:hover`, `:focus`, and `:nth-of-type()` - plus 38 othe
 
 The pseudo elements (e.g. `::after`, `::before`, and `::first-letter` - plus 3 others, not including experimental ones) apparently need `::` rather than `:`. These don't depend on the state of an element.
 
-[MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements) page has great examples and learning playground to learn the topic.
+  - [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements) page has great examples and learning playground to learn the topic.
+  - https://codepen.io/pehaa/pen/ROapJZ
 </details>
 
 <details>
   <summary>Using CSS methodologies for maintainability</summary>
-  
-  - **Using CSS methodologies for maintainability**:
-    - **OOCSS**: a methodology organized around two main principles. The first principle is separate structure and skin. This means the CSS to define the structure (like layout) shouldn’t be mixed together with the CSS to define the skin (like colors, fonts, etc.). This makes it easier to “re-skin” an application. The second principle is separate container and content. This means think of elements as re-usable objects, with the key idea being that an object should look the same regardless of where it is on the page. [https://github.com/stubbornella/oocss/wiki](https://github.com/stubbornella/oocss/wiki)
+
+   - **OOCSS**: a methodology organized around two main principles. The first principle is separate structure and skin. This means the CSS to define the structure (like layout) shouldn’t be mixed together with the CSS to define the skin (like colors, fonts, etc.). This makes it easier to “re-skin” an application. The second principle is separate container and content. This means think of elements as re-usable objects, with the key idea being that an object should look the same regardless of where it is on the page. [https://github.com/stubbornella/oocss/wiki](https://github.com/stubbornella/oocss/wiki)
     - **SMACSS**: base rules, layout rules, modules, state rules, and theme rules. The SMACSS methodology also recommends some naming conventions.
     - **BEM**: a methodology organized around the idea of dividing the user interface into independent blocks. A block is a re-usable component (an example would be a search form, defined as `<form class="search-form"></form>`). An element is a smaller part of a block that can’t be re-used on its own (an example would be a button within the search form, defined as `<button class="search-form__button">Search</button>`). A modifier is an entity that defines the appearance, state, or behavior of a block or element (an example would be a disabled search form button, defined as `<button class="search-form__button search-form__button--disabled">Search</button>`). The BEM methodology is simple to understand, with a specific naming convention that allows newcomers to apply it without having to make complex decisions. The downside for some is that the class names can be quite verbose, and don’t follow traditional rules for writing semantic class names. Later approaches like Atomic CSS would take this untraditional approach to a whole other level!
     - **Atomic CSS (aka Functional CSS)**: a methodology organized around the idea of creating small, single-purpose classes with names based on visual function. This approach is in complete opposition with OOCSS, SMACSS, and BEM — instead of treating elements on the page as re-usable objects, Atomic CSS ignores these objects altogether and uses re-usable single purpose utility classes to style each element. So instead of something like `<button class="search-form__button">Search</button>`, you would have something like `<button class="f6 br3 ph3 pv2 white bg-purple hover-bg-light-purple">Search</button>`. Many people saw this methodology as a complete violation of established CSS best practices. Further read: [https://adamwathan.me/css-utility-classes-and-separation-of-concerns/](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
@@ -60,51 +63,43 @@ The pseudo elements (e.g. `::after`, `::before`, and `::first-letter` - plus 3 o
 <details>
   <summary>Float</summary>
   
-  - **Float**: the three columns are not equal in height, and the page doesn’t fill the height of the screen. These issues are inherent with a float-based approach. All a float can do is place content to the left or right of a section — the CSS has no way to infer the heights of the content in the other sections. This problem had no straightforward solution until many years later, with a flexbox-based layout.
+  The three columns are not equal in height, and the page doesn’t fill the height of the screen. These issues are inherent with a float-based approach. All a float can do is place content to the left or right of a section — the CSS has no way to infer the heights of the content in the other sections. This problem had no straightforward solution until many years later, with a flexbox-based layout.
 </details>
 
 <details>
   <summary>Flex</summary>
   
-   - **Flex**: [Solved By Flexbox](https://github.com/philipwalton/solved-by-flexbox). Flexbox eliminates a lot of the float hacks, but the code isn’t as expressive as it could be for defining layout. It’s hard to read the flexbox CSS and get a visual understanding how all of the elements will be laid out on the page. This leads to a lot of guessing and checking when writing flexbox-based layouts.
+   - [Solved By Flexbox](https://github.com/philipwalton/solved-by-flexbox). 
+   - Flexbox eliminates a lot of the float hacks, but the code isn’t as expressive as it could be for defining layout. It’s hard to read the flexbox CSS and get a visual understanding how all of the elements will be laid out on the page. This leads to a lot of guessing and checking when writing flexbox-based layouts.
 </details>
 
 <details>
   <summary>Css Grid</summary>
 
-   - **Css Grid**: [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+   - [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 </details>
 
 <details>
   <summary>Pseudoelements</summary>
   
-   - **Pseudoelements**: [Pseudo Elements In Css](https://www.smashingmagazine.com/2011/07/learning-to-use-the-before-and-after-pseudo-elements-in-css/). `::before` and `::after`, many of the uses involve graphics but no actual word content. You must set both the `content:"";` property and if your content is empty the `display:inline-block` property or the psuedoelement will not show up. 
-</details>
-
-<details>
-  <summary>CSS Selectors</summary>
-  
-  https://codepen.io/pehaa/pen/ROapJZ
+   - [Pseudo Elements In Css](https://www.smashingmagazine.com/2011/07/learning-to-use-the-before-and-after-pseudo-elements-in-css/).      - `::before` and `::after`, many of the uses involve graphics but no actual word content. You must set both the `content:"";` property and if your content is empty the `display:inline-block` property or the psuedoelement will not show up. 
 </details>
 
 <details>
   <summary>CSS preprocessors</summary>
   
-   - **CSS preprocessors**: tooling that was created to help improve the experience of working with CSS as a language itself, starting with CSS preprocessors. A CSS preprocessor allows you to write styles using a different language which gets converted into CSS that the browser can understand. For ex: SASS helps with variables, helper functions, and calculations. Another one is LESS, the key difference from SASS is the syntax, which was designed to be as close to CSS as possible. Less is also written in JS using Node.js. Another alternative CSS preprocessor is Stylus. To use Sass, you need to install Ruby, the programming language used to compile Sass code to regular CSS. Then you would need to install the Sass gem, then run a command in the command line to convert your .sass files into .css files. `sass --watch index.sass index.css`  or `lessc index.less index.css`
+   - A tooling that was created to help improve the experience of working with CSS as a language itself, starting with CSS preprocessors. A CSS preprocessor allows you to write styles using a different language which gets converted into CSS that the browser can understand. For ex: SASS helps with variables, helper functions, and calculations. Another one is LESS, the key difference from SASS is the syntax, which was designed to be as close to CSS as possible. Less is also written in JS using Node.js. Another alternative CSS preprocessor is Stylus. To use Sass, you need to install Ruby, the programming language used to compile Sass code to regular CSS. Then you would need to install the Sass gem, then run a command in the command line to convert your .sass files into .css files. `sass --watch index.sass index.css`  or `lessc index.less index.css`
 </details>
 
 <details>
   <summary>CSS postprocessors</summary>
   
-   - **CSS postprocessors**: A CSS postprocessor uses JavaScript to analyze and transform your CSS into valid CSS. In this sense it’s pretty similar to a CSS preprocessor — you can think of it as a different approach to solving the same problem. The key difference is that while a CSS preprocessor uses special syntax to identify what needs to be transformed, a CSS postprocessor can parse regular CSS and transform it without any special syntax required.
+   - A CSS postprocessor uses JavaScript to analyze and transform your CSS into valid CSS. In this sense it’s pretty similar to a CSS preprocessor — you can think of it as a different approach to solving the same problem. The key difference is that while a CSS preprocessor uses special syntax to identify what needs to be transformed, a CSS postprocessor can parse regular CSS and transform it without any special syntax required.
 </details>
 
 ### Javascript
 
 - [Glossary of Modern JS Concepts](https://auth0.com/blog/glossary-of-modern-javascript-concepts/)
-- JavaScript lacks the strict type checking of Java, which is a blessing and a curse. Code is easier to write but requires more testing to ensure correctness.
-- The core idea of functional programming in JS - that we can plug our pure functions into higher order abstractions - is at the very heart of functional programming. A higher order function is a function that takes another function as a parameter. In JavaScript, functions are "first-class citizens." That means we can assign them to variables, create them inside of other functions, and pass them as arguments like any other object. Iteration in functional programming relies on a holy trinity of functions: map, filter, and reduce. We can use functional programming to reduce boilerplate in everyday code, keeping it DRY.
-- JavaScript is single-threaded or that it is using a callback queue, which means it has a single Call Stack. Therefore it can do one thing at a time.
 
 <details>
   <summary>Arrow</summary>
@@ -294,9 +289,9 @@ console.log(a);
 <details>
   <summary>Single Threaded & Synchronous</summary>
  
-   Single Threaded: One command at a time. Javascript behaves in a single threaded manner.
-
-   Synchronous: One at a time and in order. JS is a single threaded synchronous language.
+   - Single Threaded: One command at a time. Javascript behaves in a single threaded manner.
+   - Synchronous: One at a time and in order. JS is a single threaded synchronous language.
+   - JavaScript is single-threaded or that it is using a callback queue, which means it has a single Call Stack. Therefore it can do one thing at a time.
 </details>
 
 <details>
@@ -581,6 +576,12 @@ window.libraryName = window.libraryName || "Lib 2";
 ```
 </details>
 
+<details>
+  <summary>Functional programming in JS</summary>
+  
+The core idea of functional programming in JS - that we can plug our pure functions into higher order abstractions - is at the very heart of functional programming. A higher order function is a function that takes another function as a parameter. In JavaScript, functions are "first-class citizens." That means we can assign them to variables, create them inside of other functions, and pass them as arguments like any other object. Iteration in functional programming relies on a holy trinity of functions: map, filter, and reduce. We can use functional programming to reduce boilerplate in everyday code, keeping it DRY.
+</details>
+
 ### Testing
 
 <details>
@@ -593,6 +594,8 @@ Automated testing helps with this. Pre-commit hooks can be used when deploying b
 See the image [The Testing Pyramid](http://blog.xebia.com/its-2017-test-automation-is-not-optional-when-building-mobile-apps/) for one of many examples of the testing pyramid to understand unit tests or end-to-end (UI) tests.
 
 Manual testing is important too. It is usually done by QA engineers, and helps reveal edge cases that automated tests do not catch.
+
+JavaScript lacks the strict type checking of Java, which is a blessing and a curse. Code is easier to write but requires more testing to ensure correctness.
 </details>
 
 ### Debugging
