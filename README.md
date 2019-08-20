@@ -418,18 +418,6 @@ You don't even need to use the parentheses, and can also use multiple statements
 </details>
 
 <details>
-  <summary>Testing</summary>
-
-A well functioning team cannot rely on creating features in a hurry, throwing them over the fence and then expecting our applications to work well and without bugs. To instil quality from the start of a feature, there should be tests for it.
-
-Automated testing helps with this. Pre-commit hooks can be used when deploying builds so that errors are caught and addressed early. Unit tests can be run using pre-commit hooks. See a post [here](https://amberwilson.co.uk/blog/unit-tests/). However, there is a fine line between having too many automated tests, e.g. end-to-end tests that take too long to run with each build, and not having enough. Some companies run quicker unit tests on each build, and then run end-to-end tests as a nightly build.
-
-See the image [The Testing Pyramid](http://blog.xebia.com/its-2017-test-automation-is-not-optional-when-building-mobile-apps/) for one of many examples of the testing pyramid to understand unit tests or end-to-end (UI) tests.
-
-Manual testing is important too. It is usually done by QA engineers, and helps reveal edge cases that automated tests do not catch.
-</details>
-
-<details>
   <summary>Types</summary>
 
 JavaScript has six primitive types. These all have default values and can be checked for using the `typeof` operator.
@@ -829,7 +817,19 @@ window.libraryName = window.libraryName || "Lib 2";
 ```
 </details>
 
-#### Testing
+### Testing
+
+<details>
+  <summary>Testing</summary>
+
+A well functioning team cannot rely on creating features in a hurry, throwing them over the fence and then expecting our applications to work well and without bugs. To instil quality from the start of a feature, there should be tests for it.
+
+Automated testing helps with this. Pre-commit hooks can be used when deploying builds so that errors are caught and addressed early. Unit tests can be run using pre-commit hooks. See a post [here](https://amberwilson.co.uk/blog/unit-tests/). However, there is a fine line between having too many automated tests, e.g. end-to-end tests that take too long to run with each build, and not having enough. Some companies run quicker unit tests on each build, and then run end-to-end tests as a nightly build.
+
+See the image [The Testing Pyramid](http://blog.xebia.com/its-2017-test-automation-is-not-optional-when-building-mobile-apps/) for one of many examples of the testing pyramid to understand unit tests or end-to-end (UI) tests.
+
+Manual testing is important too. It is usually done by QA engineers, and helps reveal edge cases that automated tests do not catch.
+</details>
 
 ### Debugging
 
