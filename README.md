@@ -793,7 +793,7 @@ Why a little discipline can help if you’d like your site to load & be interact
    - Internationalization (i18n) is the process of developing products in such a way that they can be localized for languages and cultures easily. Localization (l10n), is the process of adapting applications and text to enable their usability in a particular cultural or linguistic market. For application developers, internationalizing an application means abstracting all of the strings and other locale-specific bits (such as date or currency formats) out of the application. Localizing an application means providing translations and localized formats for the abstracted bits.
 </details>
 
-### ES6 Notes
+### ES6
 
 - **JS Languages ES6 vs ES5**: Language ECMAScript(ES), Dialect (Javascript). ES5 supported by all browsers. ES6 needs polyfills, transpilers.
 - **Compatibility**: ES6 isn't natively supported by all Browser yet, or at least not all features are. It is important to know which features may or may not be used. This compatibility chart should be helpful to you: [ES6 Comatibility Chart](https://kangax.github.io/compat-table/es6/)
@@ -806,13 +806,12 @@ Why a little discipline can help if you’d like your site to load & be interact
     - **Complete Setups / Boilerplates** https://github.com/topheman/vanilla-es6-jspm and https://github.com/thoughtram/es6-babel-browserify-boilerplate. 
     - ES6 features: http://help.wtf/es6
     - Super and Extend in ES6: https://medium.com/beginners-guide-to-mobile-web-development/super-and-extends-in-javascript-es6-understanding-the-tough-parts-6120372d3420
-    - Other Resources:
-     - [Traceur Compiler](https://github.com/google/traceur-compiler)
-     - [Systemjs](https://github.com/systemjs/systemjs)
-     - [Webpack and Progressive Apps](https://medium.freecodecamp.org/how-to-write-simple-modern-javascript-apps-with-webpack-and-progressive-web-techniques-a30354eab214)
+- Other Resources:
+    - [Traceur Compiler](https://github.com/google/traceur-compiler)
+    - [Systemjs](https://github.com/systemjs/systemjs)
+    - [Webpack and Progressive Apps](https://medium.freecodecamp.org/how-to-write-simple-modern-javascript-apps-with-webpack-and-progressive-web-techniques-a30354eab214)
 
-
-## Chart Notes
+### Visualization
 - [A Better Way To Code](https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0) by Mike Bostock:
   - A danger of spending so long designing a tool is that you may forget what the tool is for: the tool itself becomes the goal, rather than the value derived from its application.
   - The purpose of a visualization tool is to construct visualizations. But what is the purpose of visualization? Per Ben Shneiderman: The purpose of visualization is insight, not pictures.
