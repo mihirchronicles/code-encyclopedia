@@ -255,7 +255,6 @@ List of topics that are useful for my day-to-day work.
 ### CSS
 
 - [Modern CSS](https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525)
-<details>
 
 <details>
   <summary>BEM</summary>
