@@ -101,6 +101,11 @@ The pseudo elements (e.g. `::after`, `::before`, and `::first-letter` - plus 3 o
 
 ### Javascript
 
+- [Glossary of Modern JS Concepts](https://auth0.com/blog/glossary-of-modern-javascript-concepts/)
+- JavaScript lacks the strict type checking of Java, which is a blessing and a curse. Code is easier to write but requires more testing to ensure correctness.
+- The core idea of functional programming in JS - that we can plug our pure functions into higher order abstractions - is at the very heart of functional programming. A higher order function is a function that takes another function as a parameter. In JavaScript, functions are "first-class citizens." That means we can assign them to variables, create them inside of other functions, and pass them as arguments like any other object. Iteration in functional programming relies on a holy trinity of functions: map, filter, and reduce. We can use functional programming to reduce boilerplate in everyday code, keeping it DRY.
+- JavaScript is single-threaded or that it is using a callback queue, which means it has a single Call Stack. Therefore it can do one thing at a time.
+
 <details>
   <summary>Arrow</summary>
 
@@ -779,6 +784,15 @@ Why a little discipline can help if you’d like your site to load & be interact
   - [Webpack](https://webpack.js.org/guides/development/)
 </details>
 
+### Internationalization i18n
+
+<details>
+  <summary>Localization vs. Internationalization</summary>
+
+   - [Localization vs. Internationalization](https://www.w3.org/International/questions/qa-i18n)
+   - Internationalization (i18n) is the process of developing products in such a way that they can be localized for languages and cultures easily. Localization (l10n), is the process of adapting applications and text to enable their usability in a particular cultural or linguistic market. For application developers, internationalizing an application means abstracting all of the strings and other locale-specific bits (such as date or currency formats) out of the application. Localizing an application means providing translations and localized formats for the abstracted bits.
+</details>
+
 ## ES6 Notes
 
 - **JS Languages ES6 vs ES5**: Language ECMAScript(ES), Dialect (Javascript). ES5 supported by all browsers. ES6 needs polyfills, transpilers.
@@ -792,29 +806,19 @@ Why a little discipline can help if you’d like your site to load & be interact
     - **Complete Setups / Boilerplates** https://github.com/topheman/vanilla-es6-jspm and https://github.com/thoughtram/es6-babel-browserify-boilerplate. 
     - ES6 features: http://help.wtf/es6
     - Super and Extend in ES6: https://medium.com/beginners-guide-to-mobile-web-development/super-and-extends-in-javascript-es6-understanding-the-tough-parts-6120372d3420
-
 <details>
   <summary>Other Resources</summary>
 
-   - **Other Resources**:
    - [Traceur Compiler](https://github.com/google/traceur-compiler)
    - [Systemjs](https://github.com/systemjs/systemjs)
    - [Webpack and Progressive Apps](https://medium.freecodecamp.org/how-to-write-simple-modern-javascript-apps-with-webpack-and-progressive-web-techniques-a30354eab214)
 </details>
 
-## Other Notes
-- [Glossary of Modern JS Concepts](https://auth0.com/blog/glossary-of-modern-javascript-concepts/)
+## Chart Notes
 - [A Better Way To Code](https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0) by Mike Bostock:
-- A danger of spending so long designing a tool is that you may forget what the tool is for: the tool itself becomes the goal, rather than the value derived from its application.
-- The purpose of a visualization tool is to construct visualizations. But what is the purpose of visualization? Per Ben Shneiderman: The purpose of visualization is insight, not pictures.
-- Visualization is a means to an end. A means to insight. A way to think, to understand, to discover, and to communicate something about the world. If we consider only the task of assigning visual encodings, of constructing visualizations, we ignore myriad other challenges: finding relevant data, cleaning it, transforming it into efficient structures, analyzing it with statistics, modeling, explaining our discoveries.
-- Programming is blindly manipulating symbols. By “blindly”, it means we can’t see the results of our manipulation.
-- Why do people decide to use frameworks? I use them for the same reason that I buy ingredients rather than growing/raising all of my own food. Smarter people than me have solved many of the problems already.
-I don't want to grow wheat, bake bread, milk cows, and churn butter. I just want to make toast.
-- JavaScript lacks the strict type checking of Java, which is a blessing and a curse. Code is easier to write but requires more testing to ensure correctness.
-- The core idea of functional programming in JS - that we can plug our pure functions into higher order abstractions - is at the very heart of functional programming. A higher order function is a function that takes another function as a parameter. In JavaScript, functions are "first-class citizens." That means we can assign them to variables, create them inside of other functions, and pass them as arguments like any other object. Iteration in functional programming relies on a holy trinity of functions: map, filter, and reduce. We can use functional programming to reduce boilerplate in everyday code, keeping it DRY
-- JavaScript is single-threaded or that it is using a callback queue, which means it has a single Call Stack. Therefore it can do one thing at a time.
-- Internationalization (i18n) is the process of developing products in such a way that they can be localized for languages and cultures easily. Localization (l10n), is the process of adapting applications and text to enable their usability in a particular cultural or linguistic market. For application developers, internationalizing an application means abstracting all of the strings and other locale-specific bits (such as date or currency formats) out of the application. Localizing an application means providing translations and localized formats for the abstracted bits.
+  - A danger of spending so long designing a tool is that you may forget what the tool is for: the tool itself becomes the goal, rather than the value derived from its application.
+  - The purpose of a visualization tool is to construct visualizations. But what is the purpose of visualization? Per Ben Shneiderman: The purpose of visualization is insight, not pictures.
+  - Visualization is a means to an end. A means to insight. A way to think, to understand, to discover, and to communicate something about the world. If we consider only the task of assigning visual encodings, of constructing visualizations, we ignore myriad other challenges: finding relevant data, cleaning it, transforming it into efficient structures, analyzing it with statistics, modeling, explaining our discoveries.
 
 # House of Commands
 
