@@ -13,31 +13,31 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
 - **client source code**: `client` 
 - **server source code**: `server`
 
-### Keyboard Shortcuts
+### Mac Keyboard Shortcuts
 <details>
-  <summary>1. Window Management </summary>
+  <summary>Window Management </summary>
   
-   - **close one window, or tab.**: `command + w`
+   - **close one window, or tab**: `command + w`
    - **close all windows**: `command + q`
    - **close all tabs**: `command + shift + w`
    - **new tab**: `command + t`
-   - **switch between tabs. Not every app supports this.**: `command + Shift + [ left/right ]`
+   - **switch between tabs**: `command + Shift + [ left/right ]`
 </details>
 <details>
-  <summary>2. Text Management</summary>
+  <summary>Text Management</summary>
   
-   - **jump between words.**: `alt + Left / right`
-   - **jump to the ends of the line.**: `command + left / right` 
+   - **jump between words**: `alt + Left / right`
+   - **jump to the ends of the line**: `command + left / right` 
    - **delete all the words till it hits the left edge.**: `command + delete`
 </details>
 <details>
-  <summary>3. Operating System</summary>
+  <summary>Operating System</summary>
   
-   - **spotlight search, then up / down and enter to select.**: `command + space`
+   - **spotlight search, then up / down and enter to select**: `command + space`
    - **application selector**: `command + tab`
 </details>
 <details>
-  <summary>4. Cursor Movement</summary>
+  <summary>Cursor Movement</summary>
 
    - **move cursor to end of the line**: `ctrl + E`
    - **move cursor to start of the line**: `ctrl + A`
@@ -46,10 +46,10 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
    - **move cursor one word forward**: `alt + F / alt + right`
    - **move cursor one word backward**: `alt + B / alt + left`
    - **,mve cursor to clicked character**: `Alt + click`
-   - **toggle between the start of line and cursor position**: `ctrl + XX	`
+   - **toggle between the start of line and cursor position**: `ctrl + XX`
 </details>
 <details>
-  <summary>5. Process</summary>
+  <summary>Process</summary>
     
    - **kills current task (SIGINT)**: `ctrl + C`
    - **inserts an EOF**: `ctrl + D`
@@ -58,7 +58,7 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
    - **allow output to the screen (if previously stopped using stop output command)**: `ctrl + Q`
 </details>
 <details>
-  <summary>6. History</summary>
+  <summary>History</summary>
    
    - **previous command**: `ctrl + P`
    - **next command**: `ctrl + R`
@@ -105,11 +105,7 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
    - **find string in directory with file name**: `grep -r --include=*.{cpp,h} “hello” .`
    - **find package if it is installed**: `dpkg -s apache-perl`
    - **find content of the link**: `curl -sS “link”`
-   - **conditional search and print**:
-   `
-   $ tail -n 3 calc_process.log | grep final | tr '{' '\n' | grep startdate
-   $ tail -n 3 calc_process.log | grep final | tr '{' '\n' | grep startdate | sed -e 's/}.*$//g'
-   `
+   - **conditional search and print**: `$ tail -n 3 calc_process.log | grep final | tr '{' '\n' | grep startdate` and `$ tail -n 3 calc_process.log | grep final | tr '{' '\n' | grep startdate | sed -e 's/}.*$//g'`
 </details> 
 
 ### VIM
@@ -135,7 +131,7 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
 ### GREP
 
 <details>
-  <summary>1. Search the contents of files using grep:</summary>
+  <summary>Search the contents of files using grep:</summary>
     
    - **find version of a file**: `command name, version, filename: grep version package.json`
    - **find keyword search**: `command name, keyword, filename: grep react package.json`
@@ -143,30 +139,30 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
    - **find by keyword in all files ending with file type**: `command name, keyword, *.fileextension: grep “#” *.md`
 </details> 
 <details>
-  <summary>2. Search directory contents recursively using grep:</summary>
+  <summary>Search directory contents recursively using grep:</summary>
 
    - **search recursively in folder root**: `commandname, -r, keyword, path: grep -r react ./`
    - **search recursively in folder path (relative to your current path not the actual)**: `grep -r react public/components/App.js`
 </details> 
 <details>
-  <summary>3. Use find to search for filename patterns (grep vs find):</summary>
+  <summary>Use find to search for filename patterns (grep vs find):</summary>
 
    - **search filename patterns**: `command name, path, -name, “*fileextension”: find . -name, “*jsx”`
 </details> 
 <details>
-  <summary>4. Search Matching files by combining find and grep with xargs:</summary>
+  <summary>Search Matching files by combining find and grep with xargs:</summary>
 
    - **pipe find into grep**: `find examples -name “*Spec.js” | barges grep “module”`
    - **same as above but just grep**: `grep -r —include=“Spec.js” “should” examples/`
 </details> 
 <details>
-  <summary>5. Search the contents of a git repository with git grep:</summary>
+  <summary>Search the contents of a git repository with git grep:</summary>
 
    - **find in git that is being tracked in version control**: `git grep bind (query string); results are highlighted in red`
    - **color keyword query**: `grep -r —color bind ./`
 </details> 
 <details>
-  <summary>6. Show context around matches using grep:</summary>
+  <summary>Show context around matches using grep:</summary>
 
    - **line number**: `grep -n “#” *.md`
    - **after**: `grep -A 2 —color “#” *.md`
@@ -174,14 +170,14 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
    - **context (before + after)**: `grep -C 2 —color “#” *.md`
 </details> 
 <details>
-  <summary>7. Search for basic patterns using grep:</summary>
+  <summary>Search for basic patterns using grep:</summary>
 
    - **everything that matches after the string like http**: `grep —color “http.” readme.md`
    - **special Character like dot, use backslash**: `grep —color “\.com” readme.md`
    - **all characters b/w special characters like ()**: `grep —color ”(.*)” readme.md`
 </details>
 <details>
-  <summary>8. Using grep’s extended regular expressions to find complex patterns:</summary>
+  <summary>Using grep’s extended regular expressions to find complex patterns:</summary>
 
    - **conditional Search for character 0 or 1 time (?)**: `grep —color “https\?” readme.md`
    - **atleast 1 or more occurances (+)**: `grep —color “https\+” readme.md`
@@ -189,20 +185,20 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
    - **escape for special characters**: `grep -E or backslash (\)`
 </details> 
 <details>
-  <summary>9. Search for optional patterns with grep OR:</summary>
+  <summary>Search for optional patterns with grep OR:</summary>
 
    - **color check**: `echo “is it grey or gray?” | grep —color “grey\|gray” or echo “is it grey or gray?” | grep —color -E “grey|gray”`
    - **spell check in your codebase (-rE recursive&Escape)**: `grep —color -rE “grey|gray” examples/`
 </details>  
 <details>
-  <summary>10. Specify line beginning and end in patterns using grep:</summary>
+  <summary>Specify line beginning and end in patterns using grep:</summary>
 
    - **anchor for beginning of the line**: `grep —color “^#” app-spec.md`
    - **anchor for ending of the line**: `grep —color “,$” app-spec.md`
    - **complex anchor with wildcard phrase**: `grep —color -r “^import .* from” examples/`
 </details> 
 <details>
-  <summary>11. Match classes of characters using bracket expressions with grep:</summary>
+  <summary>Match classes of characters using bracket expressions with grep:</summary>
 
    - **match a or b**: `echo abc123 | grep —color “[ab]”`
    - **range**: `echo abc123 | grep —color “[a-z]”`
@@ -212,13 +208,13 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
    - **sase insesitive match on only 1 character**: `find . -name “*js” | grep —color “[sS]pec”`
 </details> 
 <details>
-  <summary>12. Search with groups using grep:</summary>
+  <summary>Search with groups using grep:</summary>
     
    - **single quote after the grey or gray**: `grep -rE —color “(grey|gray)\’” .`
    - **single or double quote**: `grep -rE —color “(grey|gray)(\’|\”)” .`
 </details> 
 <details>
-  <summary>13. Find matches excluding a pattern with grep:</summary>
+  <summary>Find matches excluding a pattern with grep:</summary>
     
    - **inverse search (stuff that does’t match)**: `find examples/angularjs -name “*js” | grep -v “node modules”`
    - **inverse Search combo**: `find examples -name “*js” | grep -vE “node_modules|Spec”`
@@ -247,136 +243,19 @@ Useful shortcuts and commands I use or have used to optimize my productivity.
 
 List of topics that are useful for my day-to-day work.
 
+### HTML
+
 <details>
-  <summary>Debugging & Console</summary>
+  <summary>Pollyfills</summary>
 
-Debugging is one of the key skills required to be a great developer. Below are the key things you need to know when working with the debugger.
-
-1. Step over code, steps over a function that doesn't contain a bug and runs its code
-2. Step into code, steps inside a function and allows you to run each part separately
-3. Step out of code, steps out of a function you are inside, and runs its code
-4. Resume execution of code
-
-Check out the docs on the [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Debugger) debugger and the [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript/reference#breakpoints) debugger. Also check out [this article](https://peterlyons.com/js-debug) from Peter Lyons. He explains debugging of both front-end and back-end JavaScript code. Another great resource on [debugging javascript](https://blog.bitsrc.io/debugging-javascript-like-a-pro-a2e0f6c53c2e).
-
-A lot of people use `console.log` to debug in the console. `console.log` is your best friend. The `log()` method of `console` logs things to the web console. What some people may not know is that you can log things in nice ways! Here are three:
-
-**1. Computed property names -**
-
-The following objects could be logged one at a time:
-
-```js
-const cat = { name: 'Fluffy', colour: 'orange', specialSkill: 'staring' }
-const dog = { name: 'Thor', colour: 'brown', specialSkill: 'running' }
-const fish = { name: 'Glub', colour: 'blue', specialSkill: 'blowing bubbles' }
-```
-
-And the results would be as follows:
-
-```js
-console.log(cat) // {name: "Fluffy", colour: "orange", specialSkill: "staring"}
-console.log(dog) // {name: "Thor", colour: "brown", specialSkill: "running"}
-console.log(fish) // {name: "Glub", colour: "blue", specialSkill: "blowing bubbles"}
-```
-
-**2. CSS in the console -**
-
-Define styles like this in the console:
-
-```js
-var styles = [
-  'background: linear-gradient(#21618C, #5DADE2)',
-  'padding: 5px',
-  'border-radius: 8px',
-  'text-align: center',
-  'color: white',
-  'display: block',
-].join(';')
-```
-
-Then prefix console log with the `%c` flag, adding the `styles` variable to the end:
-
-```js
-console.log(
-  `%c My cat is ${cat.name}, ${cat.colour}, ${cat.specialSkill}`,
-  styles
-)
-```
-
-Try it in your console or look at [this](https://codesandbox.io/embed/determined-wozniak-4lt93) example on CodeSandbox!
-
-**3. Tables in the console**
-
-To display objects in a table in order to more easily compare them, try using `console.table`. You can do so with the animal objects above by running:
-
-```js
-console.table([cat, dog, fish])
-```
-
-Not only will there be a nicely-formatted table to see in the console, but the (unlabeled) objects will also be displayed as well.
-
-Check out [Chrome Devtools](https://developers.google.com/web/tools/chrome-devtools/) to learn more.
-
-```js
-    // Formatted Strings
-    console.log(
-        "%c The quick %c brown %c fox jumps over the %c lazy dog",
-        "font-size: 34px;",
-        "font-size: 24px; color: brown;",
-        "color: orange;",
-        "color: black; font-weight: bold;"
-    )
-
-    // Formatted Strings with Css styling
-    for (let i = 0; i < 10; i++) {
-        console.log(
-        "%s I've been called %d times, this is the document body %o",
-        "Hello", i, document.body
-        );
-    }
-
-    // Object Tables
-    var animals = [
-        { kind: 'Horse', name: 'Henry', age: 43 },
-        { kind: 'Dog', name: 'Spot', age: 13 },
-        { kind: 'Cat', name: ' Mittens', age: 18 },
-    ];
-    console.table(animals);
-
-    // Tracing function calls
-    // The console.trace method lets you dump a stack trace in the console — 
-    // in other words, the path the runtime took to call that function — 
-    // which is useful in tracking down the function responsible for passing bad data.
-    function foo() {
-        bar();
-        function bar() {
-        console.trace();
-        }
-    }
-    foo();
-
-    // Counting function calls
-    window.addEventListener('click', function(event) {
-        console.count(event.type);
-        console.log(event);
-    });
-
-    // To reset a counter, you just need to call below with the label, and it will reset back to zero.
-    console.countReset();
-
-    // Grouping Information in collapsible list
-    console.group('First group');
-    console.log('First message');
-    console.group('A group inside the first group');
-    console.log('A message inside the group inside the first group'); console.log('Another message inside the group inside the first group');
-    console.groupEnd();
-    console.log('Second message'); console.groupEnd();
-
-    // Inspecting State
-    $_ variable holds the most recent expression that was evaluated in the console context.
-    And $0 through $4 holds the most recent element that was inspected with inspect element
-```
+   - https://medium.com/beginners-guide-to-mobile-web-development/introduction-to-polyfills-their-usage-9cd6db4b1923
+   - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 </details>
+
+### CSS
+
+- [Modern CSS](https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525)
+<details>
 
 <details>
   <summary>BEM</summary>
@@ -393,6 +272,76 @@ __`.button--confirm`__ is a modifier.
 
 See resources [here](http://getbem.com/introduction/) and [here](https://zellwk.com/blog/css-architecture-1/).
 </details>
+
+<details>
+  <summary>Psuedo Selectors</summary>
+`::before` (`:before`) and `::after` (`:after`) are pseudo elements, which are different from pseudo classes. Both of these are grouped under pseudo selectors. I like this quote from MDN ~
+
+> Even the most skilled web developers are still amazed by what's possible using selectors.
+
+Pseudo selectors are only two types of selectors. The others are: simple selectors, attribute selectors, multiple selectors and combinators. All of these help us to target and style HTML elements. So, pseudo selectors include both pseudo elements and pseudo classes. They are added to the end of other selectors, and don't apply to whole elements, only parts of them.
+
+The pseudo classes (e.g. `:hover`, `:focus`, and `:nth-of-type()` - plus 38 others) style elements in a _certain state_.
+
+The pseudo elements (e.g. `::after`, `::before`, and `::first-letter` - plus 3 others, not including experimental ones) apparently need `::` rather than `:`. These don't depend on the state of an element.
+
+[MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements) page has great examples and learning playground to learn the topic.
+</details>
+
+<details>
+  <summary>Using CSS methodologies for maintainability</summary>
+  
+  - **Using CSS methodologies for maintainability**:
+    - **OOCSS**: a methodology organized around two main principles. The first principle is separate structure and skin. This means the CSS to define the structure (like layout) shouldn’t be mixed together with the CSS to define the skin (like colors, fonts, etc.). This makes it easier to “re-skin” an application. The second principle is separate container and content. This means think of elements as re-usable objects, with the key idea being that an object should look the same regardless of where it is on the page. [https://github.com/stubbornella/oocss/wiki](https://github.com/stubbornella/oocss/wiki)
+    - **SMACSS**: base rules, layout rules, modules, state rules, and theme rules. The SMACSS methodology also recommends some naming conventions.
+    - **BEM**: a methodology organized around the idea of dividing the user interface into independent blocks. A block is a re-usable component (an example would be a search form, defined as `<form class="search-form"></form>`). An element is a smaller part of a block that can’t be re-used on its own (an example would be a button within the search form, defined as `<button class="search-form__button">Search</button>`). A modifier is an entity that defines the appearance, state, or behavior of a block or element (an example would be a disabled search form button, defined as `<button class="search-form__button search-form__button--disabled">Search</button>`). The BEM methodology is simple to understand, with a specific naming convention that allows newcomers to apply it without having to make complex decisions. The downside for some is that the class names can be quite verbose, and don’t follow traditional rules for writing semantic class names. Later approaches like Atomic CSS would take this untraditional approach to a whole other level!
+    - **Atomic CSS (aka Functional CSS)**: a methodology organized around the idea of creating small, single-purpose classes with names based on visual function. This approach is in complete opposition with OOCSS, SMACSS, and BEM — instead of treating elements on the page as re-usable objects, Atomic CSS ignores these objects altogether and uses re-usable single purpose utility classes to style each element. So instead of something like `<button class="search-form__button">Search</button>`, you would have something like `<button class="f6 br3 ph3 pv2 white bg-purple hover-bg-light-purple">Search</button>`. Many people saw this methodology as a complete violation of established CSS best practices. Further read: [https://adamwathan.me/css-utility-classes-and-separation-of-concerns/](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
+    - **CSS in JS**: a methodology organized around defining CSS styles not in a separate style sheet, but directly in each component itself. It was introduced as an approach for the React JavaScript framework (which already took the controversial approach of defining the HTML for a component directly in JavaScript instead of a separate HTML file). Originally the methodology used inline styles, but later implementations used JavaScript to generate CSS (with unique class names based on the component) and insert it into the document with a style tag. The CSS in JS methodology once again goes completely against established CSS best practices of separation of concerns.
+</details>
+
+<details>
+  <summary>Float</summary>
+  
+  - **Float**: the three columns are not equal in height, and the page doesn’t fill the height of the screen. These issues are inherent with a float-based approach. All a float can do is place content to the left or right of a section — the CSS has no way to infer the heights of the content in the other sections. This problem had no straightforward solution until many years later, with a flexbox-based layout.
+</details>
+
+<details>
+  <summary>Flex</summary>
+  
+   - **Flex**: [Solved By Flexbox](https://github.com/philipwalton/solved-by-flexbox). Flexbox eliminates a lot of the float hacks, but the code isn’t as expressive as it could be for defining layout. It’s hard to read the flexbox CSS and get a visual understanding how all of the elements will be laid out on the page. This leads to a lot of guessing and checking when writing flexbox-based layouts.
+</details>
+
+<details>
+  <summary>Css Grid</summary>
+
+   - **Css Grid**: [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+</details>
+
+<details>
+  <summary>Pseudoelements</summary>
+  
+   - **Pseudoelements**: [Pseudo Elements In Css](https://www.smashingmagazine.com/2011/07/learning-to-use-the-before-and-after-pseudo-elements-in-css/). `::before` and `::after`, many of the uses involve graphics but no actual word content. You must set both the `content:"";` property and if your content is empty the `display:inline-block` property or the psuedoelement will not show up. 
+</details>
+
+<details>
+  <summary>CSS Selectors</summary>
+  
+  https://codepen.io/pehaa/pen/ROapJZ
+</details>
+
+<details>
+  <summary>CSS preprocessors</summary>
+  
+   - **CSS preprocessors**: tooling that was created to help improve the experience of working with CSS as a language itself, starting with CSS preprocessors. A CSS preprocessor allows you to write styles using a different language which gets converted into CSS that the browser can understand. For ex: SASS helps with variables, helper functions, and calculations. Another one is LESS, the key difference from SASS is the syntax, which was designed to be as close to CSS as possible. Less is also written in JS using Node.js. Another alternative CSS preprocessor is Stylus. To use Sass, you need to install Ruby, the programming language used to compile Sass code to regular CSS. Then you would need to install the Sass gem, then run a command in the command line to convert your .sass files into .css files. `sass --watch index.sass index.css`  or `lessc index.less index.css`
+</details>
+
+<details>
+  <summary>CSS postprocessors</summary>
+  
+   - **CSS postprocessors**: A CSS postprocessor uses JavaScript to analyze and transform your CSS into valid CSS. In this sense it’s pretty similar to a CSS preprocessor — you can think of it as a different approach to solving the same problem. The key difference is that while a CSS preprocessor uses special syntax to identify what needs to be transformed, a CSS postprocessor can parse regular CSS and transform it without any special syntax required.
+</details>
+
+### Javascript
 
 <details>
   <summary>Arrow</summary>
@@ -416,21 +365,6 @@ var elements = [
 The first function in the list is written without fat arrows. The last three functions are variations of the first function, showing how fat arrows can be used to write shorter function expressions, and therefore less code. You will need a code compiler like [Babel](https://babeljs.io/) to compile fat arrows into ES5 syntax so older browsers can use ES6 JavaScript.
 
 There are a _lot_ of resources that try explaining this syntax. Wes Bos's [introduction](https://wesbos.com/arrow-functions/) or [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) are great resources to get started.
-</details>
-
-<details>
-  <summary>Psuedo Selectors</summary>
-`::before` (`:before`) and `::after` (`:after`) are pseudo elements, which are different from pseudo classes. Both of these are grouped under pseudo selectors. I like this quote from MDN ~
-
-> Even the most skilled web developers are still amazed by what's possible using selectors.
-
-Pseudo selectors are only two types of selectors. The others are: simple selectors, attribute selectors, multiple selectors and combinators. All of these help us to target and style HTML elements. So, pseudo selectors include both pseudo elements and pseudo classes. They are added to the end of other selectors, and don't apply to whole elements, only parts of them.
-
-The pseudo classes (e.g. `:hover`, `:focus`, and `:nth-of-type()` - plus 38 others) style elements in a _certain state_.
-
-The pseudo elements (e.g. `::after`, `::before`, and `::first-letter` - plus 3 others, not including experimental ones) apparently need `::` rather than `:`. These don't depend on the state of an element.
-
-[MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements) page has great examples and learning playground to learn the topic.
 </details>
 
 <details>
@@ -536,14 +470,6 @@ if (typeof myPrimitive !== 'number')
 - The Engine consists of two main components:* Memory Heap — this is where the memory allocation happens* Call Stack — this is where your stack frames are as your code executes
 - JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.
 - The Call Stack is a data structure which records basically where in the program we are. If we step into a function, we put it on the top of the stack. If we return from a function, we pop off the top of the stack. That’s all the stack can do.
-</details>
-
-<details>
-  <summary>Optimization & Performance</summary>
-
-Why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
-- [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
-- why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
 </details>
 
 <details>
@@ -904,28 +830,152 @@ window.libraryName = window.libraryName || "Lib 2";
 ```
 </details>
 
-<details>
-  <summary>Pollyfills</summary>
+#### Testing
 
-   - https://medium.com/beginners-guide-to-mobile-web-development/introduction-to-polyfills-their-usage-9cd6db4b1923
-   - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+### Debugging
+
+<details>
+  <summary>Debugging & Console</summary>
+
+Debugging is one of the key skills required to be a great developer. Below are the key things you need to know when working with the debugger.
+
+1. Step over code, steps over a function that doesn't contain a bug and runs its code
+2. Step into code, steps inside a function and allows you to run each part separately
+3. Step out of code, steps out of a function you are inside, and runs its code
+4. Resume execution of code
+
+Check out the docs on the [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Debugger) debugger and the [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript/reference#breakpoints) debugger. Also check out [this article](https://peterlyons.com/js-debug) from Peter Lyons. He explains debugging of both front-end and back-end JavaScript code. Another great resource on [debugging javascript](https://blog.bitsrc.io/debugging-javascript-like-a-pro-a2e0f6c53c2e).
+
+A lot of people use `console.log` to debug in the console. `console.log` is your best friend. The `log()` method of `console` logs things to the web console. What some people may not know is that you can log things in nice ways! Here are three:
+
+**1. Computed property names -**
+
+The following objects could be logged one at a time:
+
+```js
+const cat = { name: 'Fluffy', colour: 'orange', specialSkill: 'staring' }
+const dog = { name: 'Thor', colour: 'brown', specialSkill: 'running' }
+const fish = { name: 'Glub', colour: 'blue', specialSkill: 'blowing bubbles' }
+```
+
+And the results would be as follows:
+
+```js
+console.log(cat) // {name: "Fluffy", colour: "orange", specialSkill: "staring"}
+console.log(dog) // {name: "Thor", colour: "brown", specialSkill: "running"}
+console.log(fish) // {name: "Glub", colour: "blue", specialSkill: "blowing bubbles"}
+```
+
+**2. CSS in the console -**
+
+Define styles like this in the console:
+
+```js
+var styles = [
+  'background: linear-gradient(#21618C, #5DADE2)',
+  'padding: 5px',
+  'border-radius: 8px',
+  'text-align: center',
+  'color: white',
+  'display: block',
+].join(';')
+```
+
+Then prefix console log with the `%c` flag, adding the `styles` variable to the end:
+
+```js
+console.log(
+  `%c My cat is ${cat.name}, ${cat.colour}, ${cat.specialSkill}`,
+  styles
+)
+```
+
+Try it in your console or look at [this](https://codesandbox.io/embed/determined-wozniak-4lt93) example on CodeSandbox!
+
+**3. Tables in the console**
+
+To display objects in a table in order to more easily compare them, try using `console.table`. You can do so with the animal objects above by running:
+
+```js
+console.table([cat, dog, fish])
+```
+
+Not only will there be a nicely-formatted table to see in the console, but the (unlabeled) objects will also be displayed as well.
+
+Check out [Chrome Devtools](https://developers.google.com/web/tools/chrome-devtools/) to learn more.
+
+```js
+    // Formatted Strings
+    console.log(
+        "%c The quick %c brown %c fox jumps over the %c lazy dog",
+        "font-size: 34px;",
+        "font-size: 24px; color: brown;",
+        "color: orange;",
+        "color: black; font-weight: bold;"
+    )
+
+    // Formatted Strings with Css styling
+    for (let i = 0; i < 10; i++) {
+        console.log(
+        "%s I've been called %d times, this is the document body %o",
+        "Hello", i, document.body
+        );
+    }
+
+    // Object Tables
+    var animals = [
+        { kind: 'Horse', name: 'Henry', age: 43 },
+        { kind: 'Dog', name: 'Spot', age: 13 },
+        { kind: 'Cat', name: ' Mittens', age: 18 },
+    ];
+    console.table(animals);
+
+    // Tracing function calls
+    // The console.trace method lets you dump a stack trace in the console — 
+    // in other words, the path the runtime took to call that function — 
+    // which is useful in tracking down the function responsible for passing bad data.
+    function foo() {
+        bar();
+        function bar() {
+        console.trace();
+        }
+    }
+    foo();
+
+    // Counting function calls
+    window.addEventListener('click', function(event) {
+        console.count(event.type);
+        console.log(event);
+    });
+
+    // To reset a counter, you just need to call below with the label, and it will reset back to zero.
+    console.countReset();
+
+    // Grouping Information in collapsible list
+    console.group('First group');
+    console.log('First message');
+    console.group('A group inside the first group');
+    console.log('A message inside the group inside the first group'); console.log('Another message inside the group inside the first group');
+    console.groupEnd();
+    console.log('Second message'); console.groupEnd();
+
+    // Inspecting State
+    $_ variable holds the most recent expression that was evaluated in the console context.
+    And $0 through $4 holds the most recent element that was inspected with inspect element
+```
 </details>
 
-## ES6 Notes
+### Performance
 
-- **JS Languages ES6 vs ES5**: Language ECMAScript(ES), Dialect (Javascript). ES5 supported by all browsers. ES6 needs polyfills, transpilers.
-- **Compatibility**: ES6 isn't natively supported by all Browser yet, or at least not all features are. It is important to know which features may or may not be used. This compatibility chart should be helpful to you: [ES6 Comatibility Chart](https://kangax.github.io/compat-table/es6/)
-- You need three things to run transpile ES5 to ES6: compiler, loader and server. Server because modules needs to be served, a light server. Cheat Sheet below:
-    - **What’s Required?** To develop ES6 applications locally, you need a transpiler (ES6 -> ES5), a module loader (to load the different modules/ files) and a little server to host your app (and to serve those module files).
-    - **Compiler Examples** Babel: https://babeljs.io/. Traceur: https://github.com/google/traceur-compiler
-    - **Module Loader / Packaging Examples**  SystemJS: https://github.com/systemjs/systemjs. Webpack: https://github.com/webpack/webpack
-    - **Servers** Live-server: https://www.npmjs.com/package/live-server. Lite-server: https://github.com/johnpapa/lite-server. Webpack-dev-server: https://webpack.github.io/docs/webpack-devserver.html
-    - **A quick way to get started** You could also use the JavaScript Package Manager (JSPM) to quickly set up your own development environment with Compiler (Babel) and Module Loader (SystemJS). You would need to install an extra server though (google for jspm server for example). Link: http://jspm.io/
-    - **Complete Setups / Boilerplates** https://github.com/topheman/vanilla-es6-jspm and https://github.com/thoughtram/es6-babel-browserify-boilerplate. 
-    - ES6 features: http://help.wtf/es6
-    - Super and Extend in ES6: https://medium.com/beginners-guide-to-mobile-web-development/super-and-extends-in-javascript-es6-understanding-the-tough-parts-6120372d3420
+<details>
+  <summary>Optimization & Performance</summary>
 
-## Tooling
+Why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
+- [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
+- why a little discipline can help if you’d like your site to load & be interactive quickly on mobile devices? tl;dr: less code = less parse/compile + less transfer + less to decompress
+</details>
+
+### Tooling
 
 - [Modern Javascript](https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70)
 
@@ -970,6 +1020,21 @@ window.libraryName = window.libraryName || "Lib 2";
   - [Kate Hudson talk on Webpack](https://www.youtube.com/watch?v=0RYETb9YVrk)
   - [Webpack](https://webpack.js.org/guides/development/)
 </details>
+
+## ES6 Notes
+
+- **JS Languages ES6 vs ES5**: Language ECMAScript(ES), Dialect (Javascript). ES5 supported by all browsers. ES6 needs polyfills, transpilers.
+- **Compatibility**: ES6 isn't natively supported by all Browser yet, or at least not all features are. It is important to know which features may or may not be used. This compatibility chart should be helpful to you: [ES6 Comatibility Chart](https://kangax.github.io/compat-table/es6/)
+- You need three things to run transpile ES5 to ES6: compiler, loader and server. Server because modules needs to be served, a light server. Cheat Sheet below:
+    - **What’s Required?** To develop ES6 applications locally, you need a transpiler (ES6 -> ES5), a module loader (to load the different modules/ files) and a little server to host your app (and to serve those module files).
+    - **Compiler Examples** Babel: https://babeljs.io/. Traceur: https://github.com/google/traceur-compiler
+    - **Module Loader / Packaging Examples**  SystemJS: https://github.com/systemjs/systemjs. Webpack: https://github.com/webpack/webpack
+    - **Servers** Live-server: https://www.npmjs.com/package/live-server. Lite-server: https://github.com/johnpapa/lite-server. Webpack-dev-server: https://webpack.github.io/docs/webpack-devserver.html
+    - **A quick way to get started** You could also use the JavaScript Package Manager (JSPM) to quickly set up your own development environment with Compiler (Babel) and Module Loader (SystemJS). You would need to install an extra server though (google for jspm server for example). Link: http://jspm.io/
+    - **Complete Setups / Boilerplates** https://github.com/topheman/vanilla-es6-jspm and https://github.com/thoughtram/es6-babel-browserify-boilerplate. 
+    - ES6 features: http://help.wtf/es6
+    - Super and Extend in ES6: https://medium.com/beginners-guide-to-mobile-web-development/super-and-extends-in-javascript-es6-understanding-the-tough-parts-6120372d3420
+
 <details>
   <summary>Other Resources</summary>
 
@@ -977,54 +1042,6 @@ window.libraryName = window.libraryName || "Lib 2";
    - [Traceur Compiler](https://github.com/google/traceur-compiler)
    - [Systemjs](https://github.com/systemjs/systemjs)
    - [Webpack and Progressive Apps](https://medium.freecodecamp.org/how-to-write-simple-modern-javascript-apps-with-webpack-and-progressive-web-techniques-a30354eab214)
-</details>
-
-## CSS
-- [Modern CSS](https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525)
-<details>
-  <summary>Float</summary>
-  
-  - **Float**: the three columns are not equal in height, and the page doesn’t fill the height of the screen. These issues are inherent with a float-based approach. All a float can do is place content to the left or right of a section — the CSS has no way to infer the heights of the content in the other sections. This problem had no straightforward solution until many years later, with a flexbox-based layout.
-</details>
-<details>
-  <summary>Flex</summary>
-  
-   - **Flex**: [Solved By Flexbox](https://github.com/philipwalton/solved-by-flexbox). Flexbox eliminates a lot of the float hacks, but the code isn’t as expressive as it could be for defining layout. It’s hard to read the flexbox CSS and get a visual understanding how all of the elements will be laid out on the page. This leads to a lot of guessing and checking when writing flexbox-based layouts.
-</details>
-<details>
-  <summary>Css Grid</summary>
-
-   - **Css Grid**: [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-<details>
-</details>
-  <summary>Pseudoelements</summary>
-  
-   - **Pseudoelements**: [Pseudo Elements In Css](https://www.smashingmagazine.com/2011/07/learning-to-use-the-before-and-after-pseudo-elements-in-css/). `::before` and `::after`, many of the uses involve graphics but no actual word content. You must set both the `content:"";` property and if your content is empty the `display:inline-block` property or the psuedoelement will not show up. 
-</details>
-<details>
-  <summary>CSS Selectors</summary>
-  
-  https://codepen.io/pehaa/pen/ROapJZ
-</details>
-<details>
-  <summary>CSS preprocessors</summary>
-  
-   - **CSS preprocessors**: tooling that was created to help improve the experience of working with CSS as a language itself, starting with CSS preprocessors. A CSS preprocessor allows you to write styles using a different language which gets converted into CSS that the browser can understand. For ex: SASS helps with variables, helper functions, and calculations. Another one is LESS, the key difference from SASS is the syntax, which was designed to be as close to CSS as possible. Less is also written in JS using Node.js. Another alternative CSS preprocessor is Stylus. To use Sass, you need to install Ruby, the programming language used to compile Sass code to regular CSS. Then you would need to install the Sass gem, then run a command in the command line to convert your .sass files into .css files. `sass --watch index.sass index.css`  or `lessc index.less index.css`
-</details>
-<details>
-  <summary>CSS postprocessors</summary>
-  
-   - **CSS postprocessors**: A CSS postprocessor uses JavaScript to analyze and transform your CSS into valid CSS. In this sense it’s pretty similar to a CSS preprocessor — you can think of it as a different approach to solving the same problem. The key difference is that while a CSS preprocessor uses special syntax to identify what needs to be transformed, a CSS postprocessor can parse regular CSS and transform it without any special syntax required.
-</details>
-<details>
-  <summary>Using CSS methodologies for maintainability</summary>
-  
-  - **Using CSS methodologies for maintainability**:
-    - **OOCSS**: a methodology organized around two main principles. The first principle is separate structure and skin. This means the CSS to define the structure (like layout) shouldn’t be mixed together with the CSS to define the skin (like colors, fonts, etc.). This makes it easier to “re-skin” an application. The second principle is separate container and content. This means think of elements as re-usable objects, with the key idea being that an object should look the same regardless of where it is on the page. [https://github.com/stubbornella/oocss/wiki](https://github.com/stubbornella/oocss/wiki)
-    - **SMACSS**: base rules, layout rules, modules, state rules, and theme rules. The SMACSS methodology also recommends some naming conventions.
-    - **BEM**: a methodology organized around the idea of dividing the user interface into independent blocks. A block is a re-usable component (an example would be a search form, defined as `<form class="search-form"></form>`). An element is a smaller part of a block that can’t be re-used on its own (an example would be a button within the search form, defined as `<button class="search-form__button">Search</button>`). A modifier is an entity that defines the appearance, state, or behavior of a block or element (an example would be a disabled search form button, defined as `<button class="search-form__button search-form__button--disabled">Search</button>`). The BEM methodology is simple to understand, with a specific naming convention that allows newcomers to apply it without having to make complex decisions. The downside for some is that the class names can be quite verbose, and don’t follow traditional rules for writing semantic class names. Later approaches like Atomic CSS would take this untraditional approach to a whole other level!
-    - **Atomic CSS (aka Functional CSS)**: a methodology organized around the idea of creating small, single-purpose classes with names based on visual function. This approach is in complete opposition with OOCSS, SMACSS, and BEM — instead of treating elements on the page as re-usable objects, Atomic CSS ignores these objects altogether and uses re-usable single purpose utility classes to style each element. So instead of something like `<button class="search-form__button">Search</button>`, you would have something like `<button class="f6 br3 ph3 pv2 white bg-purple hover-bg-light-purple">Search</button>`. Many people saw this methodology as a complete violation of established CSS best practices. Further read: [https://adamwathan.me/css-utility-classes-and-separation-of-concerns/](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
-    - **CSS in JS**: a methodology organized around defining CSS styles not in a separate style sheet, but directly in each component itself. It was introduced as an approach for the React JavaScript framework (which already took the controversial approach of defining the HTML for a component directly in JavaScript instead of a separate HTML file). Originally the methodology used inline styles, but later implementations used JavaScript to generate CSS (with unique class names based on the component) and insert it into the document with a style tag. The CSS in JS methodology once again goes completely against established CSS best practices of separation of concerns.
 </details>
 
 ## Other Notes
