@@ -793,7 +793,7 @@ Why a little discipline can help if you’d like your site to load & be interact
    - Internationalization (i18n) is the process of developing products in such a way that they can be localized for languages and cultures easily. Localization (l10n), is the process of adapting applications and text to enable their usability in a particular cultural or linguistic market. For application developers, internationalizing an application means abstracting all of the strings and other locale-specific bits (such as date or currency formats) out of the application. Localizing an application means providing translations and localized formats for the abstracted bits.
 </details>
 
-## ES6 Notes
+### ES6 Notes
 
 - **JS Languages ES6 vs ES5**: Language ECMAScript(ES), Dialect (Javascript). ES5 supported by all browsers. ES6 needs polyfills, transpilers.
 - **Compatibility**: ES6 isn't natively supported by all Browser yet, or at least not all features are. It is important to know which features may or may not be used. This compatibility chart should be helpful to you: [ES6 Comatibility Chart](https://kangax.github.io/compat-table/es6/)
@@ -806,13 +806,11 @@ Why a little discipline can help if you’d like your site to load & be interact
     - **Complete Setups / Boilerplates** https://github.com/topheman/vanilla-es6-jspm and https://github.com/thoughtram/es6-babel-browserify-boilerplate. 
     - ES6 features: http://help.wtf/es6
     - Super and Extend in ES6: https://medium.com/beginners-guide-to-mobile-web-development/super-and-extends-in-javascript-es6-understanding-the-tough-parts-6120372d3420
-<details>
-  <summary>Other Resources</summary>
+    - Other Resources:
+     - [Traceur Compiler](https://github.com/google/traceur-compiler)
+     - [Systemjs](https://github.com/systemjs/systemjs)
+     - [Webpack and Progressive Apps](https://medium.freecodecamp.org/how-to-write-simple-modern-javascript-apps-with-webpack-and-progressive-web-techniques-a30354eab214)
 
-   - [Traceur Compiler](https://github.com/google/traceur-compiler)
-   - [Systemjs](https://github.com/systemjs/systemjs)
-   - [Webpack and Progressive Apps](https://medium.freecodecamp.org/how-to-write-simple-modern-javascript-apps-with-webpack-and-progressive-web-techniques-a30354eab214)
-</details>
 
 ## Chart Notes
 - [A Better Way To Code](https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0) by Mike Bostock:
