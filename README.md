@@ -2,8 +2,9 @@
 
 List of topics that are useful for my day-to-day work.
 
-### Front-end
+### Guides
 - https://github.com/grab/front-end-guide
+- https://vanillajstoolkit.com/
 
 ### HTML
 
