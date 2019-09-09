@@ -2,9 +2,15 @@
 
 List of topics that are useful for my day-to-day work.
 
-### Guides
-- https://github.com/grab/front-end-guide
-- https://vanillajstoolkit.com/
+### Guides & Resources
+- Guide: https://github.com/grab/front-end-guide
+- Guide: https://vanillajstoolkit.com/
+- Specification: https://www.ecma-international.org/publications/standards/Ecma-262.htm
+- Manual: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+- Compatibilty Table: https://caniuse.com/ — per-feature tables of support.
+- Compatibilty Table: https://kangax.github.io/compat-table/es6/ – a table with language features and engines that support those or don’t support.
+
+
 
 ### HTML
 
